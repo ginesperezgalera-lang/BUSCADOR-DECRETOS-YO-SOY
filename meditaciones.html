@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditaciones Diarias YO SOY - Thomas Printz | Libro Completo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --violeta: #7B68EE;
+            --violeta-oscuro: #4B0082;
+            --dorado: #FFD700;
+            --azul: #4169E1;
+            --rosa: #FF69B4;
+            --blanco: #FFFFFF;
+            --verde: #228B22;
+            --oro-rubi: #B8860B;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+            min-height: 100vh;
+            color: #f0f0f0;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--dorado);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.2em;
+            color: var(--dorado);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+        
+        header .subtitulo {
+            color: #ddd;
+            font-style: italic;
+        }
+        
+        .proyecto {
+            background: rgba(75, 0, 130, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 1px solid var(--violeta);
+        }
+        
+        /* Navegación */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            background: rgba(26, 10, 46, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 100;
+        }
+        
+        nav button {
+            padding: 10px 20px;
+            border: 2px solid var(--violeta);
+            background: transparent;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        nav button:hover, nav button.active {
+            background: var(--violeta);
+            transform: scale(1.05);
+        }
+        
+        /* Secciones */
+        .seccion {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .seccion.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Prefacio */
+        .prefacio {
+            background: rgba(75, 0, 130, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--dorado);
+            margin-bottom: 30px;
+        }
+        
+        .prefacio h2 {
+            color: var(--dorado);
+            margin-bottom: 20px;
+        }
+        
+        .prefacio p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* Cards de los días */
+        .dia-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dia-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .dia-header:hover {
+            filter: brightness(1.1);
+        }
+        
+        .dia-header h3 {
+            font-size: 1.4em;
+        }
+        
+        .dia-header .rayo-info {
+            text-align: right;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .dia-content {
+            display: none;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .dia-content.expanded {
+            display: block;
+        }
+        
+        /* Colores de los rayos */
+        .rayo-1 { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .rayo-2 { background: linear-gradient(135deg, #b8860b 0%, #ffd700 100%); color: #1a1a1a; }
+        .rayo-3 { background: linear-gradient(135deg, #be185d 0%, #f472b6 100%); }
+        .rayo-4 { background: linear-gradient(135deg, #6b7280 0%, #f5f5f5 100%); color: #1a1a1a; }
+        .rayo-5 { background: linear-gradient(135deg, #166534 0%, #22c55e 100%); }
+        .rayo-6 { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%); color: #1a1a1a; }
+        .rayo-7 { background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%); }
+        
+        /* Seres de Luz */
+        .seres-luz {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .ser-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid var(--dorado);
+        }
+        
+        .ser-card h4 {
+            color: var(--dorado);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .ser-card .rol {
+            font-size: 0.85em;
+            color: #aaa;
+            font-weight: normal;
+        }
+        
+        .codigo-agesta {
+            display: inline-block;
+            background: linear-gradient(135deg, #b8860b, #ffd700);
+            color: #1a1a1a;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        /* Meditaciones */
+        .meditacion {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 3px solid var(--violeta);
+        }
+        
+        .meditacion h4 {
+            color: var(--dorado);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .meditacion p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        
+        .meditacion .autor {
+            color: var(--dorado);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        /* Decretos y Apelaciones */
+        .decreto-section, .apelacion-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .decreto-section h4, .apelacion-section h4 {
+            color: var(--dorado);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .decreto, .apelacion {
+            background: rgba(75, 0, 130, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .decreto h5, .apelacion h5 {
+            color: #ddd;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .decreto p, .apelacion p {
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        /* Contador */
+        .contador-section {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .contador-display {
+            font-size: 5em;
+            color: var(--dorado);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin: 20px 0;
+        }
+        
+        .contador-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contador-buttons button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-contar {
+            background: linear-gradient(135deg, var(--violeta), var(--violeta-oscuro));
+            color: white;
+        }
+        
+        .btn-reset {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid var(--violeta) !important;
+        }
+        
+        .progreso-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progreso-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--violeta), var(--dorado));
+            transition: width 0.3s;
+            border-radius: 10px;
+        }
+        
+        .completado {
+            color: var(--dorado);
+            font-size: 1.5em;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Índice */
+        .indice {
+            background: rgba(75, 0, 130, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .indice h3 {
+            color: var(--dorado);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .indice ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .indice li {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .indice li:hover {
+            background: rgba(123, 104, 238, 0.3);
+            transform: translateX(5px);
+        }
+        
+        /* Hoy destacado */
+        .hoy-badge {
+            background: var(--dorado);
+            color: #1a1a1a;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 2px solid var(--violeta);
+            color: #888;
+        }
+        
+        footer .gratitud {
+            font-size: 1.5em;
+            color: var(--dorado);
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6em; }
+            nav button { padding: 8px 15px; font-size: 12px; }
+            .contador-display { font-size: 3em; }
+            .seres-luz { grid-template-columns: 1fr; }
+        }
+        
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Texto destacado */
+        .destacado {
+            color: var(--dorado);
+            font-weight: bold;
+        }
+        
+        .cita {
+            border-left: 3px solid var(--dorado);
+            padding-left: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ MEDITACIONES DIARIAS ✨</h1>
+            <p class="subtitulo">Thomas Printz - Puente a la Liberación</p>
+            <p class="subtitulo">Con Códigos Sagrados de Agesta</p>
+            <div class="proyecto">Proyecto: ENSEÑANZAS ESPIRITUALES ACCESIBLES</div>
+        </header>
+        
+        <nav>
+            <button class="active" onclick="mostrarSeccion('inicio')">📖 Inicio</button>
+            <button onclick="mostrarSeccion('hoy')">🌟 Hoy</button>
+            <button onclick="irAlDia(0)">Domingo</button>
+            <button onclick="irAlDia(1)">Lunes</button>
+            <button onclick="irAlDia(2)">Martes</button>
+            <button onclick="irAlDia(3)">Miércoles</button>
+            <button onclick="irAlDia(4)">Jueves</button>
+            <button onclick="irAlDia(5)">Viernes</button>
+            <button onclick="irAlDia(6)">Sábado</button>
+            <button onclick="mostrarSeccion('contador')">🔢 Contador 45</button>
+        </nav>
+        
+        <!-- SECCIÓN INICIO -->
+        <section id="inicio" class="seccion active">
+            <div class="prefacio">
+                <h2>📜 PREFACIO - Thomas Printz</h2>
+                <p><strong>Cada día de la semana está dedicado a la efusión del Elohim, el Arcángel y el Chohán de uno de los Siete Rayos de Luz</strong> que rodean el Cuerpo Causal de cada individuo.</p>
+                <p><strong>El objetivo de este libro es coordinar las Meditaciones Diarias del cuerpo estudiantil completo.</strong> Contiene las palabras de los Seres Ascendidos y decretos apropiados para cada día.</p>
+                <p>Ha sido hecho lo suficientemente pequeño para que el chela lo lleve en la cartera o en el bolsillo.</p>
+                <p><strong>Es hermoso y alentador saber que, en todo el mundo, los benditos chelas están usando el mismo texto, coordinándose así la fuerza de la oración mundial</strong> para la bendición de Dios y sus Divinos Mensajeros, además de la querida Tierra y Sus evoluciones.</p>
+                <p>Decretamos que ustedes amarán este libro, y disfrutarán la participación en esta meditación a nivel mundial, sabiendo que otras personas de bien están comprometidas en este servicio.</p>
+                <p>Mediante el proceso natural de la Vida, <strong>Helios y Vesta</strong> –los seres del Sol– irradian Luz Electrónica desde el centro corazón de Sus Seres a través de las Siete Esferas. En cada período de veinticuatro horas, Ellos enfatizan los Dones y Poderes de una Esfera en particular, por medio de los grandes Elohim, Arcángeles y Chohanes que representan cada Esfera y Rayo.</p>
+            </div>
+            
+            <div class="indice">
+                <h3>📚 ÍNDICE TEMÁTICO</h3>
+                <ul>
+                    <li onclick="irAlDia(0)">🔵 Domingo - Primer Rayo Azul</li>
+                    <li onclick="irAlDia(1)">🟡 Lunes - Segundo Rayo Dorado</li>
+                    <li onclick="irAlDia(2)">🩷 Martes - Tercer Rayo Rosa</li>
+                    <li onclick="irAlDia(3)">⚪ Miércoles - Cuarto Rayo Blanco</li>
+                    <li onclick="irAlDia(4)">🟢 Jueves - Quinto Rayo Verde</li>
+                    <li onclick="irAlDia(5)">🟠 Viernes - Sexto Rayo Oro-Rubí</li>
+                    <li onclick="irAlDia(6)">🟣 Sábado - Séptimo Rayo Violeta</li>
+                </ul>
+            </div>
+            
+            <div class="prefacio">
+                <h2>🙏 GUIÓN DE TRABAJO DE MEDITACIÓN YO SOY</h2>
+                <p><strong>1º/</strong> Columna recta, mano derecha sobre la izquierda.</p>
+                <p><strong>2º/</strong> Hacer tres respiraciones 4 – 2 – 4 – 2.</p>
+                <p><strong>3º/</strong> Repetimos en voz alta las afirmaciones del equilibrio:</p>
+                <p class="cita">Yo soy el equilibrio, yo siento el equilibrio, yo estoy en equilibrio.<br>
+                Yo soy la armonía, yo siento la armonía, yo estoy en armonía.<br>
+                Yo soy la paz, yo soy la paz, yo soy la paz.</p>
+                <p><strong>4º/</strong> Agradecemos a Dios y a nuestra presencia YO SOY, poder estar aquí y ahora, realizar este trabajo, ayudar y ser ayudados.</p>
+                <p><strong>5º/</strong> Fijamos un objetivo personal y uno grupal (la sanación del planeta).</p>
+                <p><strong>6º/</strong> Leemos las meditaciones del día correspondiente.</p>
+                <p><strong>7º/</strong> Cerramos con gratitud: <span class="destacado">Gracias, Gracias, Gracias</span></p>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN HOY -->
+        <section id="hoy" class="seccion">
+            <div id="contenido-hoy"></div>
+        </section>
+        
+        <!-- SECCIÓN RAYOS -->
+        <section id="rayos" class="seccion">
+            <div id="contenido-rayos"></div>
+        </section>
+        
+        <!-- SECCIÓN CONTADOR -->
+        <section id="contador" class="seccion">
+            <div class="contador-section">
+                <h2 style="color: var(--dorado); margin-bottom: 20px;">🔢 Contador de 45 Repeticiones</h2>
+                <p style="margin-bottom: 20px;">Para los Códigos Sagrados de Agesta y Mantrams</p>
+                
+                <div class="progreso-bar">
+                    <div class="progreso-fill" id="progreso" style="width: 0%"></div>
+                </div>
+                
+                <div class="contador-display" id="contador-numero">0</div>
+                <p id="contador-mensaje">Toca el botón para empezar</p>
+                
+                <div class="contador-buttons">
+                    <button class="btn-contar" onclick="contar()">+1 Repetición</button>
+                    <button class="btn-reset" onclick="resetContador()">Reiniciar</button>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(75, 0, 130, 0.2); border-radius: 10px;">
+                    <h4 style="color: var(--dorado); margin-bottom: 15px;">📿 Método de las Falanges</h4>
+                    <p>5 dedos × 3 falanges = 15 por ronda</p>
+                    <p>3 rondas = 45 repeticiones ✓</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p class="gratitud">Gracias, Gracias, Gracias 🙏</p>
+            <p>Proyecto: Enseñanzas Espirituales Accesibles</p>
+            <p>6 de enero de 2026</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Base de datos completa de los 7 Rayos
+        const rayos = {
+            0: { // DOMINGO - PRIMER RAYO
+                dia: "DOMINGO",
+                rayo: "PRIMER RAYO",
+                titulo: "LLAMAS AZUL Y CRISTAL DE FUERZA, PODER, PROTECCIÓN Y VOLUNTAD DE DIOS",
+                color: "AZUL",
+                actividad: "DECISIÓN",
+                clase: "rayo-1",
+                seres: [
+                    { rol: "Director (Chohán)", nombre: "Maestro El Morya", codigo: "522", complemento: "Lady Miriam" },
+                    { rol: "Arcángel", nombre: "Arcángel Miguel", codigo: "613", complemento: "Fe", codigoComp: "72128" },
+                    { rol: "Elohim", nombre: "Hércules", codigo: "521", complemento: "Amazona", codigoComp: "632" }
+                ],
+                mantram: `AMADA PRESENCIA DE DIOS "YO SOY", DENTRO DE MI CORAZÓN, ¡TE AMO Y TE ADORO! Te invoco para que flamees a través de mí la LLAMA AZUL CRISTAL y que LA VOLUNTAD DE DIOS se manifieste en todo lo que yo haga en este día.
+
+Ahora me doy cuenta que dentro de mi corazón está el PLAN DE DIOS para mí, al igual que la manera y el medio de traerlo a manifestación. Ahora ENTRO EN EL SILENCIO Y ESCUCHO y sé la cosa perfecta que tengo que hacer mientras mantengo la atención en el Plan Divino y le estoy dando forma y trayéndolo a manifestación.
+
+"YO SOY" LA FE EN EL PODER DE DIOS en mí para dirigirme, protegerme, iluminarme, sanarme, proveerme, sostenerme y hacer lo que yo requiera que sea hecho.`,
+                ensenanzas: [
+                    {
+                        autor: "EL AMADO ASCENDIDO MAESTRO EL MORYA",
+                        codigo: "522",
+                        subtitulo: "Gran Director del Primer Rayo",
+                        texto: `"Mide bien la visión que te venga de cualquier parte de la vida. Aquello que te eleve, aquello que unifique, aquello que libera, aquello que vuelve la conciencia hacia DIOS, ¡ES BUENO!. ¡ESA ES LA VOLUNTAD DE DIOS!.
+
+La vida que late dentro de tu corazón sabe todo lo que es constructivo, todo lo que alivia y libera de la esclavitud. ¡ESO ES DE DIOS!"`,
+                        oracion: `AMADO MORYA: ¡Te amo, te bendigo y te doy gracias por todo tu servicio hacia mí y hacia toda la humanidad! Envuélveme en tu Llama Azul de Amor y hazme sentir tu Fuerza y Poder, para que al recibir las ideas de DIOS pueda yo llevarlas a la manifestación externa, para la bendición de mis hermanos.
+
+Ayúdame a decirle a mi Presencia Divina: "Hágase Tu Voluntad y mía". Ayúdame a sentir y a comprender TU OBEDIENCIA ILUMINADA A ESA VOLUNTAD; TU HUMILDAD ESPIRITUAL ANTE EL AMOR DE DIOS; Y TU RESPETO POR DIOS, POR SUS REPRESENTANTES Y POR LA PRESENCIA DE DIOS EN CADA CORAZÓN HUMANO.`
+                    },
+                    {
+                        autor: "LA AMADA LADY MIRIAM",
+                        codigo: "",
+                        subtitulo: "Complemento Divino del Amado El Morya y anterior Chohán del Primer Rayo",
+                        texto: `"Al simplemente reconocer y realizar que La Presencia de Dios está dentro de ti, esperando tu invitación para intensificar Su Presencia, comenzará la descarga de Sus Regalos, Sus Poderes y Sus Milagros dentro de tu mundo y tus asuntos.
+
+Esta Omni-Presencia está viva dentro de tu corazón; requieres intermediario alguno para invocarla. Desde dentro de Tu Bendito Ser fluyen el Confort, la Paz, el Entendimiento y la Inteligencia Directiva que resuelve tus problemas diarios."`
+                    },
+                    {
+                        autor: "EL GRAN ARCÁNGEL MIGUEL",
+                        codigo: "613",
+                        subtitulo: "Arcángel de la Protección y Defensor de la Fe",
+                        texto: `"A través de la luz de mi corazón y del tuyo creamos para ti, AHORA, a través de este mundo de apariencia, un sendero de amor, paz, consuelo, opulencia, y bienestar físico, mental, emocional y espiritual.
+
+¿Sentirás la luz de tu corazón creando este sendero frente a ti cuando salgas de tu habitación cada mañana? ¿Caminarás en el sendero de los Ángeles todo el día con la misma seguridad que si pasaras a través de uno de los Rayos que han sido establecidos como sendero permanente en la sustancia de la Tierra por los Maestros?"`,
+                        oracion: `Amado ARCÁNGEL MIGUEL. ¡TE AMO, TE BENDIGO Y TE DOY GRACIAS POR TU GRAN SERVICIO HACIA MÍ Y HACIA TODA LA HUMANIDAD EN TANTOS SIGLOS! Envía tus Ángeles de Protección para que me envuelvan a mí y a mis seres queridos, así como a todos los seres constructivos que hay sobre la Tierra. Libéranos de los pensamientos y sentimientos que están ajustados al Concepto Inmaculado de Dios para nosotros. Te doy gracias.`
+                    },
+                    {
+                        autor: "EL GRAN ELOHIM HÉRCULES",
+                        codigo: "521",
+                        subtitulo: "",
+                        texto: `"¿Estás satisfecho con lo que manifiestas hoy? ¿Estás contento con medio pan, cuando podías tener uno completo? ¿Estás resignado a vivir en la limitación y en un cuerpo que se corrompe? Porque es lo que tú DESEES lo que se manifestará.
+
+¡Oh, amado estudiante de la Luz!, sobre tu frente flamea la Llama de Hércules. Cada mañana acuérdate de reconocerla antes de proceder a ejecutar las actividades del mundo exterior y expresa el propósito de convertirlas en aquello que es Voluntad de Dios.
+
+Acuérdate de Hércules a medida que avanzas. Acepta limitaciones en tu ser individual cuando tú sabes que sólo se requiere el ejercicio de tu VOLUNTAD, para extraer de dentro de ti lo que necesites."`,
+                        oracion: `AMADO HÉRCULES; ¡Te amo, te bendigo y te doy gracias por tu servicio a toda nuestra Tierra y a todo lo que en ella hay! CARGA cada uno de mis cuerpos – físico, etérico, mental y emocional – con la fuerza de Hércules y el Poder de Su Amor, el cual da protección invencible en todo momento.
+
+EN EL NOMBRE DE LA PRESENCIA DE DIOS "YO SOY", en el nombre de Hércules, expreso mi voluntad de ser divinamente libre en mente, sentimientos, cuerpo, finanzas, mundo y asuntos. Expreso mi voluntad de ser Maestro Divino, de ser el Dios Encarnado que prometió Jesús.`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "FUEGO VIOLETA - CORAZÓN",
+                        texto: `¡Fuego violeta, divino amor,
+arden dentro de este mi corazón!
+Sois clemencia verdadera siempre,
+manténme siempre contigo en comunión.`
+                    },
+                    {
+                        titulo: "FUEGO VIOLETA - CABEZA",
+                        texto: `YO SOY luz, tú Cristo en mí,
+libera mi mente para siempre;
+fuego violeta, brilla por siempre
+en lo profundo de mi mente.
+
+Dios que me das el pan cada día,
+de fuego violeta mi cabeza llena,
+hasta que Tu celestial resplandor,
+de mi mente haga mente luz.`
+                    },
+                    {
+                        titulo: "FUEGO VIOLETA - MANO",
+                        texto: `YO SOY la mano de Dios en acción,
+logrando victorias todos los días;
+la satisfacción más grande de mi alma pura
+es caminar por la Vía Media.`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN AL MAESTRO EL MORYA",
+                        texto: `¡Poderosa Presencia Divina YO SOY en mi corazón y Bien Amado Maestro El Morya!
+
+Envuelve y recarga a todo discípulo y buscador de la Luz con la fuerza y la pureza cósmica, hasta que se establezca el equilibrio perfecto en sus cuerpos inferiores.
+
+Acepto la armonía total en mis sentimientos, y ordeno que permanezcan presentes en la actividad de cada día.`
+                    },
+                    {
+                        titulo: "ORACIÓN A SAN MIGUEL",
+                        texto: `Bien Amado Miguel Arcángel. Defendednos en las horas de conflicto. Sed nuestra protección contra toda maldad y tentación de las fuerzas visibles e invisibles. Debilitadlas.
+
+Humildemente suplicamos: Príncipe de la Legión Celeste, por el amor de Dios que eliminéis de la atmósfera de la Tierra todos los espíritus mal intencionados que quieran corromper nuestras almas. ¡Así sea!`
+                    },
+                    {
+                        titulo: "INVOCACIÓN AL RAYO AZUL DEL GRAN SOL CENTRAL",
+                        texto: `En nombre de la inmortal Llama Trina presente en cada corazón humano, apelamos a Vos, Bien Amado Arcángel Miguel, Bien Amada Astrea y a todas las Legiones Angélicas de la Flameante Espada Azul; venid y arrojad el Rayo Azul del Gran Sol Central en la densa capa de energía deletérea, que viene creciendo desde el inicio de los tiempos.
+
+Arremeted en todos los registros etéricos, en la masa del karma acumulado por los pueblos, en todo aquello que sirva a la Luz. Lanzad el Rayo Azul sobre todas las fuerzas activas de la multitud de seres negativos que oprimen y persiguen a los hombres.
+
+Arrojad el Rayo Azul a todas las conciencias desequilibradas y a las cuatro involuciones inferiores de la humanidad. Destruid con Vuestro poderoso Rayo Azul los centros negativos de aquellos que disipan la energía divina y transformad todo en Luz.`
+                    },
+                    {
+                        titulo: "APELACIÓN AL BIEN AMADO ELOHIM HÉRCULES",
+                        texto: `Bien Amada Presencia Divina ¡YO SOY! en mí, poderoso Hércules y Divina Amazona, proyectad el momentum pleno y concentrado de Vuestra Llama y Rayo Azul dentro del núcleo cohesionado de cada cuerpo elemental.
+
+Libertad (3) los electrones y los átomos de tales cuerpos elementales con el poder purificador de la Transmutadora Llama Violeta, bajo la dirección del Maestro Ascendido Saint Germain.
+
+¡Así sea! ¡Bien Amado YO SOY!`
+                    }
+                ]
+            },
+            1: { // LUNES - SEGUNDO RAYO
+                dia: "LUNES",
+                rayo: "SEGUNDO RAYO",
+                titulo: "LA LLAMA DORADA DE ILUMINACIÓN, AMOR Y PAZ",
+                color: "AMARILLO SOLAR",
+                actividad: "PERCEPCIÓN",
+                clase: "rayo-2",
+                seres: [
+                    { rol: "Director (Chohán)", nombre: "Maestro Confucio", codigo: "", complemento: "" },
+                    { rol: "Anterior Director", nombre: "Maestro Lanto", codigo: "111", complemento: "" },
+                    { rol: "Instructor Mundial", nombre: "Maestro Kuthumi", codigo: "", complemento: "" },
+                    { rol: "Arcángel", nombre: "Arcángel Jofiel", codigo: "521", complemento: "Cristina" },
+                    { rol: "Elohim", nombre: "Casiopea", codigo: "280", complemento: "Minerva" }
+                ],
+                mantram: `MI AMADO SER CRÍSTICO "YO SOY", EN MÍ: ¡Te amo, te adoro! Yo invoco la Llama Dorada del Cristo Cósmico de Amor e Iluminación, para que me envuelva hoy.
+
+"YO SOY" LA ILUMINACIÓN Y SABIDURÍA DE DIOS DIRIGIÉNDOME EN TODO LO QUE YO HAGO. YO ESCUCHO Y YO COMPRENDO Y YO BENDIGO TODO LO QUE YO CONTACTE HOY.
+
+Ahora realizo que VIVA, dentro de mi cuerpo físico esta Llama Sanadora que me corrige de toda imperfección. Ahora realizo que Viviente, dentro de mi cuerpo físico, tengo INFINITO PROVEEDOR de todas mis necesidades y requerimientos.
+
+Ahora realizo que VIVA dentro de mi cuerpo físico la INTELIGENCIA por medio de la cual todas las formas me darán la perfección que existe dentro de su esencia primaria.
+
+Ahora realizo que hay sino UN SOLO PODER: DIOS DENTRO DE MI PROPIO CORAZÓN y que ese Poder actúa para mí según la fe que yo tenga en Él. De esta manera, mi Santo Ser Crístico "YO SOY" en mí, yo te llamo, ven y deja que Tu Plan Divino se cumpla.`,
+                ensenanzas: [
+                    {
+                        autor: "AMADO ASCENDIDO MAESTRO KUTHUMI",
+                        codigo: "",
+                        subtitulo: "Anterior Director del Rayo Segundo, ahora Instructor Mundial",
+                        texto: `"Amados corazones: HAGAN GRANDES ESFUERZOS para ir a encontrar la PRESENCIA DE DIOS. Aquiétense y encuéntrenla en la paz de sus propios mundos sensorios.
+
+Abran los ojos y comprendan que el Majestuoso Poder de Dios se encuentra en el latido de sus corazones y permitan que esa Naturaleza Divina, flameando a través de la carne de ustedes, desde Su propio lugar, sea testigo de esta convicción anclada en el mundo sensorial, de cada uno de ustedes, del TODO PODER Y AMOR de la presencia de DIOS.
+
+¿Quieren ustedes hacer una cosa? Cada mañana, mientras meditan sobre la naturaleza de su presencia; el Poder de Su Presencia; la maestría de Su Presencia, contémplenla por un momento, entonces traten de ir más allá e intenten Ser Esa Presencia, solo MEDIA HORA."`,
+                        oracion: `AMADO KUTHUMI: ¡Te amo, te bendigo y te doy gracias por tu gran servicio a mí y a toda la humanidad! Permite que Tu Sabiduría, Tu Paz y Tu Corazón Comprensivo me envuelvan para que yo pueda comprender siempre a mis hermanos y les dé la ayuda que más necesiten.`
+                    },
+                    {
+                        autor: "EL AMADO MAESTRO LANTO",
+                        codigo: "111",
+                        subtitulo: "Ahora Instructor Mundial y Anterior Director del Segundo Rayo",
+                        texto: `"En su nuevo servicio a menudo ustedes sienten la ingratitud e indiferencia de la humanidad y, a veces, se cansan de hacer el bien. Cuando nosotros nos encontramos presentes en su atmósfera, a menudo sentimos el desaliento que les invade.
+
+Recuerden, por favor, aquellos de Nosotros que hemos pasado millones de años amándolos, bendiciéndolos y poniendo nuestra Fe y Confianza en ustedes. Al realizar esto, ustedes disfrutarán dando nuevo balance a su vida, retribuyendo la misma confianza, la misma paciencia y la misma fe en sus hermanos, que hemos tenido nosotros hacia ustedes."`,
+                        oracion: `AMADO LANTO: ¡Te amo, te bendigo y agradezco tu servicio a nuestro planeta Tierra por tantos siglos! ¡Ayúdanos a todos a sentir esa gran reverencia que tienes Tú por toda la vida, y el amor que la ayuda a liberarse!`
+                    },
+                    {
+                        autor: "AMADO CONFUCIO",
+                        codigo: "",
+                        subtitulo: "Anfitrión del Retiro de las Montañas Rocosas y Director del Segundo Rayo",
+                        texto: `"Toda Edad Dorada comienza con el embrión de Uno o Dos Seres. Ustedes tienen el Foco de la Llama Violeta, la Presencia del Ascendido Maestro Saint Germain y de su Representante en la Tierra.
+
+Ese Embrión compuesto de Seres Individuales, es inteligente porque dentro de su corazón se encuentra el Rayo Cósmico del Ascendido Maestro Saint Germain.
+
+¿Eres tú parte de ese embrión? Para poder precipitar una Edad Dorada tú tienes que tener el Poder adherente al Amor Divino. Al protegerse el embrión y al afinarse las células que hacen el Centro del Corazón, el Cuerpo Espiritual crece."`,
+                        oracion: `AMADO CONFUCIO: ¡Te damos las gracias por tus palabras de amor! Dótanos con tu Poder del Silencio para ayudar a traer en Paz el Plan Divino de Dios para la Edad Dorada.`
+                    },
+                    {
+                        autor: "EL AMADO JOFIEL",
+                        codigo: "521",
+                        subtitulo: "Arcángel de la Iluminación",
+                        texto: `"Mi servicio a la vida está en enseñar a la conciencia permitiéndole descubrir eso que es el Poder de la Luz. En la Segunda Esfera las ideas se cristalizan. Toman forma.
+
+Tú recibes una idea abstracta para una nueva casa. Tu mente entonces expresa: 'Desearía una casa con ocho habitaciones y un jardín en contorno.' Si la idea te agrada, tus sentimientos la energetizan, la presión de tu sentir le da vida a la idea y la trae a la manifestación."`,
+                        oracion: `¡AMADO JOFIEL!: ¡Te amo, te bendigo y te agradezco tus servicios hacia mí y hacia toda la humanidad! CÁRGAME con tus sentimientos del Poder de Dios dentro de mi propio corazón, capaz de dominar todas las circunstancias que enfrento, por el Poder Externo del Amor y la Luz, y, enséñame como exteriorizar las ideas Divinas que me vienen del Corazón de Dios, trayéndolas a la forma exterior.`
+                    },
+                    {
+                        autor: "EL AMADO CASIOPEA",
+                        codigo: "280",
+                        subtitulo: "Elohim de la Sabiduría",
+                        texto: `"El propósito del Segundo Rayo es la percepción activa y la contemplación iluminada del Plan y Designio de Dios. Después que has expresado la decisión de cumplir la voluntad de Dios, debes de recibir la Idea Divina y la instrucción de cómo manifestarla.
+
+Por consiguiente, la Primera Actividad del cuerpo mental, después de la decisión de actuar, es AQUIETARSE: ¡Dentro de tu corazón está la Llama Dorada de la ILUMINACIÓN que te revelará la Verdad!"`,
+                        oracion: `AMADO CASIOPEA: ¡Te amo, te bendigo y te agradezco todo lo que significas para nuestra Tierra y su Humanidad! Ayúdame a persistir en esta ciencia de la "Precipitación", y a manifestar cada día una idea recibida del Padre para exteriorizarla conscientemente. Gracias.`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "AFIRMACIONES DEL SEGUNDO RAYO",
+                        texto: `1. YO SOY EL Arquetipo de Perfección.
+2. YO SOY el heredero del Reino de Dios.
+3. YO SOY el conocimiento de la Llama Violeta, capaz por el Poder de Dios de transmutar toda sustancia ensombrecida.
+4. YO SOY la inmensidad del Espíritu de la Luz.
+5. YO SOY el significado de la Libertad infinita.
+6. YO SOY el conocimiento de la Gloria de Dios.
+7. YO SOY el estado de bendición del Espíritu Santo.
+8. YO SOY el bendito sentimiento de la felicidad de Dios a través de mi mente y mi corazón.
+9. YO SOY la Libertad de toda limitación.
+10. YO SOY la Libertad de todo temor.
+11. YO SOY la Libertad de toda preocupación.
+12. YO SOY la realización plena de mi alma y ser total, en las manos de Dios Infinito.
+13. YO SOY libre de todo sentido de crítica, condenación o juicio de cualquier individuo.
+14. YO SOY el reconocimiento del intento de Dios de liberar la Tierra.
+15. YO SOY la consciencia de la Divina Consciencia.
+16. YO SOY la Libertad de Dios en manifestación.
+17. YO SOY la Felicidad de Dios en manifestación.
+18. YO acepto mi Libertad ahora.
+19. Padre en tus manos encomiendo mi espíritu.
+20. YO SOY la Compasión del Cristo Cósmico.
+21. YO SOY la efusión del Cristo Cósmico dentro de la civilización.`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN AL MAESTRO KUTHUMI",
+                        texto: `(Para que sea dicha por la noche, antes de dormir)
+
+Bien Amada Presencia Divina YO SOY en mí, y Bien Amado Maestro Ascendido Kuthumi: esta noche, cuando mi cuerpo esté dormido, mándame un mensajero para conducirme ante Vos en mi cuerpo sutil.
+
+Hecho esto, enseñadme a sumergirme completamente en la Llama Dorada de Iluminación, y llenad mi conciencia con todo lo que debo saber, a fin de realizar mi plan divino.
+
+Tras mi vuelta al cuerpo físico, potenciad el recuerdo perfecto de esas instrucciones, a fin de que el conocimiento sea real y práctico, posibilitándome la maestría en mi propio mundo, a fin de que yo sea un vehículo mejor para los Maestros Ascendidos y para mis compañeros.
+
+Confío enteramente en que esto será realizado, Bien Amado YO SOY.`
+                    },
+                    {
+                        titulo: "APELACIÓN AL ARCÁNGEL JOFIEL",
+                        texto: `(La persona debe visualizarse dentro de una columna de Llama Dorada)
+
+En nombre de nuestra Presencia Divina YO SOY y con su autoridad, apelamos a Vos Bien Amados Arcángel Jofiel y Constantina, Vuestro complemento divino, para que nos ayudéis a divisar la Idea Divina que se encuentra en la Llama Crística de nuestros corazones.
+
+Avivad la Luz Interna de la Llama Dorada de la Iluminación y traspasad (3), nuestros cuerpos físico, etérico, emocional y mental con la penetrante luz dorada de la Sabiduría, abriéndonos el camino del conocimiento para que ejecutemos todas nuestras tareas con perfección.
+
+Selladnos en la Luz de Vuestros corazones. Agradecemos Vuestro servicio prestado a toda la humanidad.`
+                    }
+                ]
+            },
+            2: { // MARTES - TERCER RAYO
+                dia: "MARTES",
+                rayo: "TERCER RAYO",
+                titulo: "LLAMA ROSA DEL AMOR DIVINO Y DE LA ADORACIÓN",
+                color: "ROSADO",
+                actividad: "COHESIÓN",
+                clase: "rayo-3",
+                seres: [
+                    { rol: "Directora (Chohán)", nombre: "Lady Rowena", codigo: "82137", complemento: "Victor" },
+                    { rol: "Anterior Director (Ahora Maha Chohán)", nombre: "Pablo el Veneciano", codigo: "232", complemento: "" },
+                    { rol: "Arcángel", nombre: "Arcángel Chamuel", codigo: "725", complemento: "Caridad", codigoComp: "28700" },
+                    { rol: "Elohim", nombre: "Orión", codigo: "25600", complemento: "Angélica", codigoComp: "12500" }
+                ],
+                mantram: `AMADA PRESENCIA DE DIOS "YO SOY" EN MÍ: ¡Te amo, te adoro! Oh, Gran Poderosa Llama dentro de mi corazón, te envío mi continuo amor y adoración y al Gran Dios del Universo y Sus Mensajeros.
+
+Envío mi amor a la vida en todas partes. Bendigo toda la vida que yo contacte en este día, en pensamientos, sentimientos, palabras y acciones.
+
+¡Critico, ni condeno, ni juzgo en este día! Me abstengo de permitir que mediante mi palabra o sentimiento, salga de mí ninguna expresión de vida sin ir con ella la Bendición de DIOS.
+
+"YO SOY" una Presencia Confortadora para toda la vida en todas partes.
+
+"YO SOY" SELLADO EN LA LLAMA ROSA DEL AMOR DE DIOS.`,
+                ensenanzas: [
+                    {
+                        autor: "EL AMADO PABLO EL VENECIANO",
+                        codigo: "232",
+                        subtitulo: "Anterior Director del Tercer Rayo y hoy el Maha Chohán",
+                        texto: `"Ven conmigo hoy, lejos de todas las cuitas del ser exterior. Entra conmigo a esa cavidad dentro de tu corazón que es 'LA MORADA SECRETA DEL ALTÍSIMO' y, estando allí, contempla la LLAMA TRIPARTITA que es la vestimenta de tu Ser Crístico.
+
+Relájate en el Amor de la Presencia de Dios. A medida que tu adoración fluya hacia esa Presencia, acuérdate de que tu cuerpo es el templo dentro del cual está la Llama Inmortal de la Vida Eterna, que es el Ser Crístico, hecho a la Imagen y Semejanza del Eterno Dios, esperando tu amor, tu adoración y tu devoción.
+
+A aquellos pocos que rara vez le piden asistencia, les dice: '¡Todo eso que tú me pides, Amado, yo puedo serlo y mucho más!'. Cuando tu adoración sea una constante actividad dentro de lo más profundo de tu ser, este Ser Crístico crecerá, se expandirá.
+
+Necesitas proclamarlo con palabras. La luz que irradiará de Su Presencia, siempre creciente y que responderá a tu vida derramada de Él, se hará visible como un aura radiante flameando en contorno tuyo y todos la verán."`,
+                        oracion: `AMADO PABLO EL VENECIANO: ¡Te amo, te adoro y te doy gracias por todo lo que has hecho por mí y por toda la humanidad! Enséñame a ser la persona gentil, dotada de tus dones de Tolerancia, Diplomacia, Comprensión y Humanidad para entenderme bien con mis compañeros.`
+                    },
+                    {
+                        autor: "LA AMADA MAESTRA LADY ROWENA",
+                        codigo: "82137",
+                        subtitulo: "Directora del Rayo Tercero",
+                        texto: `"El centrarse en la Llama Triple Inmortal dentro del propio corazón, asegura al individuo la Libertad de todo lo que es menor que la Perfección Crística. Por eso es tan importante que los discípulos que están bajo nuestra dirección practiquen diariamente este ejercicio ya que, cuanto más se usa esta actividad, más eficiente se hace el individuo.
+
+Es y debe ser la meta de todos aquellos que están bajo la Supervisión Personal de los Seres Cósmicos y de los Maestros de Sabiduría, el alcanzar la talla espiritual del Cristo en Acción en todo momento, permitiéndole a ese Ser Glorioso dirigir inteligentemente todas las acciones del individuo.
+
+¡Oh, Amados! Yo les aseguro que una vez que hayan experimentado realmente la forma de vivir del Cristo, todo lo demás se esfuma en insignificancia, y ustedes se hacen UNO CON NOSOTROS QUE SOMOS UNO CON LA VIDA y todas sus manifestaciones.
+
+Hay que recordar siempre que el ajustarse con la UNIDAD DEL TODO es identificarse con la PERFECCIÓN que existe en toda manifestación, ya que toda existencia contiene el Principio Activo de DIOS, PADRE – MADRE."`,
+                        oracion: `AMADA MAESTRA LADY ROWENA: ¡Te amo, te bendigo y te agradezco todo lo que significas para mí y para toda la humanidad, en todas partes! Ayúdame a mantener mi intención centrada en mi Ser Crístico que se encuentra anclado dentro de mi corazón, para que yo pueda exteriorizar Su Gran Perfección en todo lo que yo haga, piense o sienta, en todas las actividades de mi mundo y mis asuntos.`
+                    },
+                    {
+                        autor: "AMADO ARCÁNGEL CHAMUEL",
+                        codigo: "725",
+                        subtitulo: "De la Adoración",
+                        texto: `"La Llama de la Adoración es una de las actividades más prácticas que se pueden generar dentro del corazón, alma y espíritu de aquellos que están atados, porque es un tratamiento para la mente, el sentimiento y una verdadera terapia para la carne.
+
+La verdadera Adoración a Dios contiene ninguna búsqueda personal. Es una absoluta relajación; es reposo asoleándose en la Bondad Divina, amándole por ella misma; o amando a cualquiera de los seres deíficos que representan algún servicio especial hacia la vida.
+
+Yo reto a cualquier individuo que se encuentre deprimido; a cualquiera que esté dolorido, a cualquiera que se sienta encadenado en cualquier forma, que utilice la Llama de la Adoración (que es la naturaleza verdadera del Ser) y que, si al usarla siente o ve liberación, entonces el sol y los planetas SEGUIRÁN MOVIÉNDOSE EN SUS RESPECTIVOS CAMINOS."`,
+                        oracion: `AMADO CHAMUEL, te amo, te bendigo y te doy gracias por tu bendita asistencia a mí y a toda la humanidad. Enciende y flamea tu rosada Llama de la Adoración a través de todas las células de mi cuerpo y haz que se expanda la perfección hasta que llene todo mi ser y mi mundo.
+
+Enciende tu Llama Rosada de la Adoración a través de mis finanzas y mi provisión de dinero y que se expanda hasta lograrme liberación financiera.
+
+Enciende tu Llama de la Adoración a través de mis sentimientos para que se expanda Amor Divino en mí hasta que se haga contagioso a toda la vida que yo contacte.
+
+Manténme sellado en un pilar de Llama Rosa de Amor, Adoración, Confort y Perfección.`
+                    },
+                    {
+                        autor: "EL GRAN ELOHIM ORIÓN",
+                        codigo: "25600",
+                        subtitulo: "",
+                        texto: `"Te traigo la plenitud del Rayo y la Llama Rosa. Te los traigo como una alquimia espiritual disolvente para desterrar aquellos resentimientos y presiones de energía dentro de tu mundo sensorial que yacen enterrados profundamente dentro de tus memorias (cuerpo etérico).
+
+Esas presiones son causadas por la infinidad de experiencia infelices que tuviste en el pasado y que han formado heridas y cicatrices en tu cuerpo etérico. Estas cicatrices se vuelven a reventar a la menor provocación, brotando hacia fuera de nuevo el veneno de pasada enemistades, pleitos y mal compromisos.
+
+El hombre sabe lo que él carga encima, enterrado profundamente en este departamento que la ciencia llama el subconsciente. Ese reino donde están yaciendo atrofiadas las memorias de cada una de las experiencias vividas en cada encarnación desde el primer día en que esa vida cayó en desgracia hasta el momento presente.
+
+El Plan Divino reúne ciertas vidas repetidamente, presentándoles nuevas oportunidades continuamente, para que se enderecen las cosas entre ellas.
+
+En este mismo momento, si hay alguien en el mundo con quien tú estás en completo acuerdo, trae la imagen de esa persona a tu mente y te daré la presión de mi sentimiento de perdón amoroso e incondicional hacia ella. Si lo aceptas, te verás libre del retroceso de energías que producen esos errores pasados."`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "EXPANSIÓN DE LA LLAMA VIOLETA",
+                        texto: `Llama Violeta del Corazón de Dios (3).
+Expande tu misericordia a través mío (3).
+Llama Violeta del Corazón de Dios (3).
+Transmuta todo amor por el rayo del perdón (3).
+Llama Violeta del Corazón de Dios (3).
+ILUMINA! Para estar todos en la acción (3).
+
+Oh Llama de la Misericordia para siempre vibra.
+Limpia a la Tierra por el Comando de Cristo.
+Tu Libertador poder YO DEMANDO AHORA:
+TOMA DOMINIO AHORA
+A TU LUZ ME INCLINO
+YO SOY TU RADIANTE LUZ.
+
+LLAMA VIOLETA TAN BRILLANTE,
+AGRADECIDO AHORA POR TU RAYO,
+ENVIADO A MÍ, HOY DÍA.
+LLÉVAME COMPLETAMENTE
+HASTA QUE TODO SEA TÚ.`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN A LA LLAMA ROSA",
+                        texto: `¡Bien Amada Presencia Divina YO SOY EN MÍ. Bien Amada Maestra Rowena, Arcángel Chamuel y Caridad, Elohim Orión y Angélica, y todos los que sirven en el Rayo del Amor, enseñadme a amar como Vosotros!
+
+Ayúdame a expresaros mis sentimientos de gratitud y el de toda la humanidad para que el hogar de nuestras almas sea un ambiente feliz, amoroso y armónico.
+
+Bien Amado Padre Celeste y Ángeles del Amor, ayudadme a amar libremente toda Vida, al igual que lo hizo el Maestro Jesús.
+
+Por Dios, el Gran Amor ¡YO SOY! ¡YO SOY! ¡YO SOY!`
+                    },
+                    {
+                        titulo: "APELACIÓN AL BIEN AMADO ARCÁNGEL CHAMUEL",
+                        texto: `En nombre y con la autoridad de la Presencia Divina YO SOY presente en nuestros corazones, apelamos a Vosotros, Bien Amados Chamuel y Caridad, Vuestro Complemento Divino, para auxiliarnos a irradiar amor a toda la humanidad, preparándola para el gran cambio cósmico.
+
+Flamead la Llama Rosa del Puro Amor Divino a través de nuestros cuatro cuerpos inferiores, aliviando nuestros fardos kármicos a través de la Ley de la Compensación y elevando todo en la luz.
+
+Agradecidos, reverenciamos la Llama del Amor.`
+                    }
+                ]
+            },
+            3: { // MIÉRCOLES - CUARTO RAYO
+                dia: "MIÉRCOLES",
+                rayo: "CUARTO RAYO",
+                titulo: "LLAMA BLANCA DE PUREZA, RESURRECCIÓN Y ASCENSIÓN",
+                color: "BLANCO CRISTAL",
+                actividad: "CONCEPTO INMACULADO",
+                clase: "rayo-4",
+                seres: [
+                    { rol: "Director (Chohán)", nombre: "Maestro Serapis Bey", codigo: "68120", complemento: "" },
+                    { rol: "Arcángel", nombre: "Arcángel Gabriel", codigo: "881", complemento: "Esperanza", codigoComp: "584" },
+                    { rol: "Elohim", nombre: "Claridad (Claire)", codigo: "323", complemento: "Astrea", codigoComp: "724" }
+                ],
+                mantram: `AMADÍSIMA PRESENCIA DE DIOS "YO SOY" EN MÍ, Y AMADO SER CRÍSTICO DENTRO DE MI CORAZÓN. ¡Te amo, te adoro! Tú conoces la razón de mi ser.
+
+A través de las energías de mi mundo hoy, haz que yo la cumpla. Haz que yo pierda una sola oportunidad. Que yo jamás cometa un error de ninguna especie y, sobre todo, que yo cometa errores de omisión.`,
+                ensenanzas: [
+                    {
+                        autor: "EL AMADO CLARIDAD (CLAIRE)",
+                        codigo: "323",
+                        subtitulo: "Elohim de la Pureza",
+                        texto: `"YO SOY" el Elohim de la Pureza. "YO SOY" la Pureza Viva que respira en el electrón que vive en el centro de los átomos que componen tu cuerpo físico. Yo estoy vivo en cada célula de tu cuerpo, moviéndome en contorno al núcleo central de cada átomo de tu carne. ¡Yo estoy contigo siempre! ¡"YO SOY" TU VIDA!
+
+"YO SOY" La Luz Electrónica de la Pureza que respira en tu cuerpo mental. "YO SOY" la viviente y respirante llama de Luz Pura que cada uno de ustedes invoca en el océano de su mundo emocional.
+
+"YO SOY" la Luz Electrónica dentro de cada célula de tu envoltura etérica, en la cual has grabado esas huellas de impureza; y yo ahora estoy expandiendo mi Pureza desde el centro de cada célula y átomo de tus cuatro cuerpos inferiores.
+
+EXPANDIENDO (3), mi verdadera Naturaleza que es la Purificación de esta Tierra, todo lo que hay sobre ella, dentro de ella o en su atmósfera.
+
+Yo decreto que la Pureza en el corazón de cada uno de tus electrones ahora SE EXPANDIRÁ (3) hasta que todo lo que tenga apariencia de limitación podrá ya aprisionar tu vida en la discordia, y así las sombras ¡DEJARÁN DE SER!"`,
+                        oracion: `AMADO ELOHIM DE LA PUREZA, te amo, te bendigo y te doy gracias por tu gran servicio hacia mí y toda la humanidad. Séllame a mí y a todos mis hermanos en tu óvalo de pura, incandescente luz Blanca que desvía las corrientes de energía que retardan la acción vibratoria de mis cuerpos internos.
+
+Yo decreto que la Pureza dentro de todo electrón en mi aura, mis sentimientos, mi mente, mis cuerpos etérico y físico ahora SE EXPANDE (3) y aquello que es limitación y sombra en mi mundo ahora será más.`
+                    },
+                    {
+                        autor: "AMADO GABRIEL",
+                        codigo: "881",
+                        subtitulo: "Arcángel de la Resurrección",
+                        texto: `"La Religión es cosa de ceremonia únicamente. Es asunto de la vida diaria y de cada hora que vivimos. Es cosa de SENTIDO COMÚN SENCILLO Y ORDINARIO.
+
+Es asunto de disciplina, dominio de sí mismo y contemplación. Es también desarrollo del amor y la gratitud por la vida, y a ese Dios que te ha dado esa vida y ha sostenido tu Presencia en el universo por millones de años, esperando cumplir a través de ti un destino que puede ser cumplido por ningún otro individuo."`,
+                        oracion: `AMADO GABRIEL, te amo, te bendigo y te doy gracias por lo que Tú significas para mí y toda la humanidad. Carga estos mis decretos con tu presión Cósmica de Amor.
+
+"YO SOY" LA Resurrección y la Vida de todo el bien en mi corriente de Vida.
+"YO SOY" la Resurrección y la Vida de mi eterna juventud y belleza, perfecta vista y oído, fuerza ilimitada, energía y salud.
+"YO SOY" la Resurrección y la Vida de mi provisión ilimitada de dinero y de toda cosa buena y perfecta.
+"YO SOY" la Resurrección y la Vida de toda perfección en mi mundo y en mi Plan Divino en cumplimiento ahora mismo.`
+                    },
+                    {
+                        autor: "EL AMADO MAESTRO SERAPIS BEY",
+                        codigo: "68120",
+                        subtitulo: "Director del Cuarto Rayo",
+                        texto: `"La Llama de la Ascensión, amados míos, es Inteligente. Yo la he amado y vivido largo tiempo y bien.
+
+Puede ascender cualquiera condición en que tú te encuentres. Puede ascender de la limitación a la armonía. De la aflicción a la paz. De la pobreza a la opulencia. De la discordia a la perfección.
+
+Es una de las actividades de la alquimia divina que el cuerpo estudiantil, en su mayoría, ha pensado en utilizar.
+
+Si hay condiciones pesadas en tu mundo; si tu alma está decaída (decaimientos que a veces son tuyos); si hay depresión en el grupo de personas que te rodean; si hay fallas financieras que se te hacen conocer por las noticias; llama a la Hermandad de Luxor donde está el Templo de la Ascensión, a que envíen la Llama Blanca para que traiga a tu vida la ascendencia y el entusiasmo que resucita la depresión y la eleva al estado natural de armonía y felicidad.
+
+La Llama de la Ascensión, al igual que la Llama de la Resurrección, es un antídoto maravilloso contra toda depresión INDIVIDUAL O COLECTIVA."`,
+                        oracion: `AMADO SERAPIS BEY, te amo, te bendigo y te doy gracias por la Llama de la Ascensión que es el retorno al hogar para mí y para toda la humanidad.
+
+En el nombre de mi Amada Presencia de Dios "YO SOY", y la de toda la humanidad, te invoco, Amado Serapis Bey y a toda la Hermandad de Luxor, para que mantengan encendida la Llama de la Ascensión (3), a través de mis sentimientos, mi mente, mi cuerpo etérico, mi cuerpo físico, mi hogar, mi negocio y todos mis asuntos.
+
+Que su actividad estimulante eleve todo mi mundo al Amor, Felicidad, Opulencia, Victoria y Perfección de toda especie, eternamente sostenida. Llévame a la victoria de mi ascensión cuando mi servicio aquí en la Tierra esté cumplido.`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "FIAT PARA LA SAGRADA LUZ DE LA LIBERTAD - Por Saint Germain",
+                        texto: `¡Poderosa luz cósmica,
+mi deslumbrante Presencia YO SOY,
+proclama libertad por todas partes;
+orden y con control divino
+yo hago íntegras todas las cosas!
+
+¡Poderosa luz cósmica,
+detén las hordas desaforadas de la noche,
+proclama libertad por todas partes,
+con justicia y servicio fiel
+yo vengo, oh Dios, a Ti!
+
+¡Poderosa luz cósmica,
+Yo soy el poder prevaleciente de la Ley,
+proclama la libertad por todas partes;
+magnificando toda buena voluntad
+YO SOY la libertad que sigue viviendo!
+
+¡Poderosa luz cósmica,
+endereza ahora todas las cosas,
+proclama la libertad por todas partes;
+todo procederá en la victoria del amor,
+YO SOY la sabiduría que todos conocerán!
+
+YO SOY la santa luz de la libertad
+nunca más sin esperanza,
+YO SOY la santa luz de la libertad
+que comparto por siempre.
+
+¡Libertad, libertad, libertad,
+expande, expande, expande!
+YO SOY, YO SOY, YO SOY,
+para siempre YO SOY la libertad!`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN A LA LLAMA DE LA ASCENSIÓN",
+                        texto: `En nombre de la Presencia Divina YO SOY, nos inclinamos reverentes ante la Llama Trina de cada ser humano y apelamos a la fuerza cósmica de la Llama de la Ascensión.
+
+Bien Amado Maestro Serapis Bey, expande y eleva la vibración de puro amor Divino en los corazones de todos los hombres.
+
+Nos inclinamos ante Vuestra bendición, Bien Amado Maestro Serapis Bey.`
+                    },
+                    {
+                        titulo: "APELACIÓN AL ELOHIM CLAIRE",
+                        texto: `Bien Amada Presencia ¡YO SOY! en mí y Bien Amado Claire. Vos, Gran Elohim de la Pureza, Llevad (3), cada partícula de mi mundo, sentimiento y pensamiento, y mis cuerpos etérico y físico, con Vuestra Llama Cósmica de la Pureza.
+
+Purificad (3), todo mi ser, mi mundo y mis actividades, manteniéndome cerrado en vuestra Pureza Oval, tres metros en cada dirección.
+
+También pido esto para mis seres queridos y para toda la humanidad en general.`
+                    },
+                    {
+                        titulo: "APELACIÓN A LA BIEN AMADA ASTREA, DIOSA DE LA FUERZA",
+                        texto: `Bien Amada y Poderosa Presencia Divina YO SOY en mí y Bien Amada Astrea. Envolvedme con Vuestro Círculo Cósmico y Espada de Llama Azul que poseen la fuerza de los soles del Gran Sol Central, todos los karmas destructivos de aquellos que parten de la Tierra a otro plano, en este año.
+
+Cercad y transmutad (3) toda causa, efecto, marcas y recuerdos para que esto perdure más.
+
+Transmutad (3) todo con la Llama Cósmica y con el poder de tres veces tres.`
+                    }
+                ]
+            },
+            4: { // JUEVES - QUINTO RAYO
+                dia: "JUEVES",
+                rayo: "QUINTO RAYO",
+                titulo: "LLAMA VERDE DE LA VERDAD, CURACIÓN, CONSAGRACIÓN Y CONCENTRACIÓN",
+                color: "VERDE",
+                actividad: "CONCENTRACIÓN",
+                clase: "rayo-5",
+                seres: [
+                    { rol: "Director (Chohán)", nombre: "Maestro Hilarión", codigo: "2631", complemento: "" },
+                    { rol: "Arcángel", nombre: "Arcángel Rafael", codigo: "29", complemento: "Madre María", codigoComp: "333" },
+                    { rol: "Elohim", nombre: "Vista (Ciclopea)", codigo: "52911", complemento: "Cristal" }
+                ],
+                mantram: `Amadísima Presencia de Dios "YO SOY" en mí, consagro mi vida este día al servicio de Dios, El Bien, para que sólo la Perfección tome forma en mi cerebro.
+
+Que mis sentimientos se mantengan en calma, amorosos, bondadosos, dispuestos a la ayuda y felices.
+
+Que mis ojos vean sino Perfección.
+Que mis oídos escuchen sino Perfección.
+Que mis labios hablen sino Perfección.
+Que mis manos hagan sino sanar y bendecir.
+Que mis pies sean mensajeros del Bien.
+Que mi cuerpo sea fuerte y dispuesto a ser un instrumento que lleve a todas partes la Perfección de Dios.`,
+                ensenanzas: [
+                    {
+                        autor: "EL AMADO HILARIÓN",
+                        codigo: "2631",
+                        subtitulo: "Director del Quinto Rayo",
+                        texto: `"Si un individuo que está buscando la Divinidad, Salud, Felicidad y Suministro, pudiera comprender primero el poder de la atención sostenida, y luego por su esfuerzo consciente retira su atención de aquellos muchos imanes del mundo de las apariencias, anclando su atención en la Presencia de Dios, esa Presencia fluiría a través de él en la corriente que regresa, con plenitud de todo lo que él pueda desear.
+
+El Maestro Saint Germain ha repetido incesantemente: 'Allí donde está tu atención, allí estás tú. En lo que fijes tu atención, ¡en eso te conviertes!'.
+
+La radiación del Amor Divino y la Misericordia fluyen a través del Universo, pero el hombre está totalmente inconsciente de ello. Este fluir del perdón de Dios afecta igualmente a los justos y a los injustos; pero la norma para el ser que desea avanzar en actuación consciente radica en el poder controlado de su atención."`,
+                        oracion: `AMADO HILARIÓN, te amo, te bendigo y te doy gracias por tu ayuda a mí y a toda la humanidad. Cárgame con tu amor y comprensión de la exactitud de la ley cósmica, y el sentimiento de Servicio Consagrado a Dios y al Hombre. Cárgame con tu ímpetu para yo presentar la Verdad a los hombres en forma que el que oiga acepte. Gracias.`
+                    },
+                    {
+                        autor: "AMADO RAFAEL",
+                        codigo: "29",
+                        subtitulo: "Arcángel de la Curación y la Consagración",
+                        texto: `"¡Conságrate diariamente! Si tus ojos ven iniquidad, tú sabes dónde está 'Yo Soy'. Di mentalmente: 'Padre, perdona mi transgresión de la Ley del Amor'. Amado Rafael, consagra mis ojos para que vean únicamente perfección.
+
+Si escuchas chismes y murmuraciones; si tus manos hacen gestos impacientes y dejas brotar la ira; si tus labios pronuncian palabras duras, di: 'Padre, perdóname el mal uso de tu energía'.
+
+¿Qué importa que tengas que repetirlo? Las únicas corrientes de vida que están en peligro son aquellas que tienen deseos de levantarse y volver a empezar.
+
+Yo reconsagraré cualquier vehículo tuyo veinticuatro veces cada hora si lo necesitas y me lo pides. ¡Me importa! ¡Esa es mi razón de ser!"`,
+                        oracion: `AMADO RAFAEL, te amo, te bendigo y te doy gracias por todo lo que has hecho por mí y por toda la humanidad. Séllanos en tu Llama de Consagración y Perfección, y ayúdame a estar consciente únicamente de la Perfección.
+
+PIENSO PERFECCIÓN, SIENTO PERFECCIÓN, VEO PERFECCIÓN, ESCUCHO PERFECCIÓN, HABLO PERFECCIÓN, "YO SOY" Y SOLO MANIFIESTO PERFECCIÓN ESTE DÍA.`
+                    },
+                    {
+                        autor: "AMADO VISTA (CICLOPEA)",
+                        codigo: "52911",
+                        subtitulo: "Elohim de la Concentración, la Música y el 'OJO TODO AVIZOR' de Dios",
+                        texto: `"¿Qué se puede efectuar, aún en las actividades mundanas de tu diario vivir, si tienes concentración? Sin ella sólo hay mediocridad. Se rasguña, como quien dice, apenas la superficie.
+
+Aquellos que resuelven elevarse por encima de las masas, toman una faz de la vida y la desarrollan con maestría, decidiendo dentro de ellos mismos llegar a la excelencia, por lo menos en esa línea de expresión. Su desarrollo va de acuerdo con la concentración de esas energías, lo mismo que su eficacia.
+
+La Ley dice que lo que tú comienzas lo puedes cumplir cuando está de acuerdo con el Plan Divino de Perfección, bien sea de curación, precipitación, libertad económica, eterna juventud o la restauración de un órgano físico, importa lo que sea, ES POSIBLE, pero la constancia de mi Rayo es necesaria para lograrlo."`,
+                        oracion: `AMADO VISTA, Te amo, te bendigo y te doy gracias por tu gran servicio a nuestra Tierra. Cárgame con tu poder de concentración para llegar a ser Maestro aquí y ahora. ¡Gracias!`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "ESPIRAL RADIANTE DE LLAMA VIOLETA",
+                        texto: `En el nombre de la amada, poderosa y victoriosa Presencia de Dios YO SOY en mí, mi Santo Yo Crístico, el amado Lanelo, todo el Espíritu de la Gran Hermandad Blanca, la Madre del Mundo y la vida elemental de fuego, aire, agua y tierra, yo decreto:
+
+¡Radiante espiral de llama violeta,
+desciende y resplandezca ahora en mí!
+¡Radiante espiral de llama violeta,
+libera, libera, libera!
+
+¡Radiante llama violeta, oh ven,
+impulsa y resplandece tu luz a través de mí!
+¡Radiante llama violeta, oh ven,
+revela el poder de Dios para que todos vean!
+¡Radiante llama violeta, oh ven,
+despierta la Tierra y Libérala!
+
+¡Resplandor de la llama violeta,
+estalla y hierve a través de mí!
+¡Resplandor de la llama violeta,
+expande para que todos vean!
+¡Resplandor de la llama violeta,
+establece avanzada de misericordia aquí!
+¡Resplandor de la llama violeta,
+ven, transmuta todo miedo ahora!
+
+¡Amado YO SOY, amado YO SOY, amado YO SOY!`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN A LOS SERES DEL RAYO DE LA CURACIÓN",
+                        texto: `En nombre de la Presencia Divina YO SOY, apelamos a Vos Bien Amado Maestro Hilarión y a todos los Seres del Rayo de la Curación: dirigid vuestras energías sanadoras a través de nuestros pensamientos y sentimientos, a través de cada célula de nuestro cuerpo físico, para que podamos ser saludables, volviéndonos instrumentos adecuados al Servicio Prestado a la Legión Ascendida.
+
+Aquello que pedimos para nosotros también lo pedimos para nuestros seres queridos. Enviad Vuestra Legión Angélica de Curación a los hospitales, residencias y sanatorios y a todo ser doliente sobre la Tierra. Os lo agradecemos.`
+                    },
+                    {
+                        titulo: "APELACIÓN A LOS BIEN AMADOS ARCÁNGELES RAFAEL Y MADRE MARÍA",
+                        texto: `En nombre y con la autoridad de nuestra Presencia Divina YO SOY, apelamos a Vos, Bien Amados Arcángeles Rafael y a Vuestro complemento divino, Madre María, del ministerio de curación, para auxiliarnos en la senda que conduce a la perfección.
+
+Santificad nuevamente nuestros ojos para que ellos vean solamente la perfección de la Luz Crística existente en el corazón de todo ser humano.`
+                    },
+                    {
+                        titulo: "APELACIÓN A MADRE MARÍA A FAVOR DE UN ENFERMO",
+                        texto: `¡Oh Dios Todo Poderoso presente en mi corazón! ¡Oh, María, Madre de Jesús, enviad a Vuestros ángeles sobre Vuestro rayo de amor para que ellos guarden y curen!
+
+¡Oh María, volved a caldear su corazón en Vuestras manos de Luz y tomadlo en Vuestro seno!
+
+Yo os agradezco, ¡Oh María! La atención a esta apelación.`
+                    }
+                ]
+            },
+            5: { // VIERNES - SEXTO RAYO
+                dia: "VIERNES",
+                rayo: "SEXTO RAYO",
+                titulo: "LLAMAS ORO Y RUBÍ DE PAZ, GRACIA, SANEAMIENTO, PROVISIÓN Y MINISTERIO",
+                color: "ORO - RUBÍ",
+                actividad: "MINISTERIO",
+                clase: "rayo-6",
+                seres: [
+                    { rol: "Directora (Chohán)", nombre: "Maestra Lady Nada", codigo: "771", complemento: "" },
+                    { rol: "Anterior Director", nombre: "Jesús (ahora Ángel Mischa)", codigo: "41933", complemento: "" },
+                    { rol: "Arcángel", nombre: "Arcángel Uriel", codigo: "411", complemento: "Aurora" },
+                    { rol: "Elohim", nombre: "Tranquilidad", codigo: "0129", complemento: "Pacífica" }
+                ],
+                mantram: `AMADA PRESENCIA DE DIOS "YO SOY" en mí: ¡Te amo, te adoro! Derrama en mí este día tus llamas Oro y Rubí para la bendición de cada célula de mi cuerpo físico y todos los poderes de la naturaleza que me sirven tan bien.
+
+Que todo aquel que toque "el borde de mi manto" sienta Tu Amor, Tu Paz, Tu Perfección, pues "YO SOY" LA PRESENCIA DE LA BENDICIÓN Y BENDIGO TODO Y A TODOS LOS QUE YO CONTACTE ESTE DÍA.`,
+                ensenanzas: [
+                    {
+                        autor: "AMADO JESÚS",
+                        codigo: "41933",
+                        subtitulo: "Anterior Director del Rayo Sexto (ahora trabaja como Ángel Mischa por la Unidad Mundial)",
+                        texto: `"Las exigencias de su tiempo, energía y atención de todo el que está sirviendo en algún esfuerzo espiritual, forman un gran obstáculo para su progreso individual a menos que aprenda a aquietar conscientemente las energías de su propio mundo para que nueva fuerza, fe y poder puedan ser suplidos por su propia Presencia 'YO SOY', y por los Seres Divinos que lo están asistiendo.
+
+Yo conozco esto por mi propia experiencia. Durante mi Ministerio, como hoy, el mundo y su gente requerían mucha asistencia, y hay una gran tendencia en precipitarse a servir sin antes darse el tiempo necesario para recuperarse en la 'Fuente Cósmica'.
+
+Refiriéndome a mi propia experiencia, recordarás que yo a menudo me ausentaba a los cerros a orar. Ningún estudiante puede servir con eficacia si comprende la necesidad de tomar tiempo (sin separarse del mundo) para entrar en el 'SILENCIO' y extraer la fuerza y santidad necesaria de la FUENTE DE TODO BIEN."`,
+                        oracion: `AMADO JESÚS, te amo, te bendigo y te agradezco todo lo que significas para mí y para toda la humanidad. Cárgame con la Paciencia y Amor del ASCENDIDO JESUCRISTO, el poder para hacer todo lo que Tú hiciste.`
+                    },
+                    {
+                        autor: "AMADA ASCENDIDA SEÑORA MAESTRA NADA",
+                        codigo: "771",
+                        subtitulo: "Directora del Sexto Rayo",
+                        texto: `"Hoy ustedes también están sembrando sus raíces profundamente en la Llama del Corazón, de donde viene el alimento, el propio latir de la vida del cuerpo, de donde sale la curación de la carne; de donde viene la providencia de vuestras mesas y hasta el techo que cubre vuestras cabezas.
+
+Así como vuestras raíces están ancladas en Dios buscando el alimento espiritual, así será vuestro florecimiento manifiesto ante todos los hombres.
+
+Aquello que el hombre hace en secreto es manifestado para que todos lo vean. La humanidad va a venir hacia ti, toda confusa y esperando en ti. Acuérdate de mí, NADA y libértalos con amor."`,
+                        oracion: `AMADA NADA, te amo, te bendigo y te agradezco el amor que fluye de ti hacia mí y hacia toda la humanidad. Manténme sellado en el poder de tu Llama Rubí que sana, bendice y liberta todo lo que yo contacte.`
+                    },
+                    {
+                        autor: "AMADO URIEL",
+                        codigo: "411",
+                        subtitulo: "Arcángel de Ministerios",
+                        texto: `"El Ángel de ministerios tiene la misión de ocuparse de una vida. Para todo humano, para todo haragán rezagado de otros sistemas y todo Espíritu Guardián, hay un Ángel Ministrador que, voluntariamente, ejerce la función de proteger esa corriente de vida por tanto tiempo como ella elija permanecer en la Tierra, o formar parte de esta evolución.
+
+A dicho Ser, se le llama a menudo 'El Ángel Guardián'. ¿Cómo te gustaría trabajar con una sola persona durante incontables millones de años? Tu Ángel Guardián ni siquiera asiste a un Retiro cuando está en actividad, si 'su' corriente de vida asiste también.
+
+¡Piensa en esto! Es el caso de Prisión por Amor, que tiene paralelo. El Ángel Ministrador está obligado por Ley a separarse de su pupilo y, en cada oportunidad, a mandarle un rayo de Luz a la conciencia con la esperanza de que busque un poco más alto."`,
+                        oracion: `AMADO URIEL: ¡Te amo, te bendigo y te doy gracias a ti y a mi Ángel Ministrador por tu abnegación hacia mí durante tantos eones! Ayúdame a ayudar a mi Ángel a conservarme sin desvío en el Sendero de la Pureza, la Armonía y la Felicidad.`
+                    },
+                    {
+                        autor: "EL AMADO TRANQUILIDAD",
+                        codigo: "0129",
+                        subtitulo: "Gran Elohim de la Paz",
+                        texto: `"YO SOY" El Elohim del Ministerio y la Paz. Tú que has dado tu interés y tu vida a las actividades del Séptimo Rayo, representado por el Amado Maestro Saint Germain, estás lentamente emergiendo del lodo de la creación humana y de la limitación.
+
+Nosotros estamos tratando de fundar una gran base para este movimiento mundial; tratando de hacer de cada uno de ustedes un pilar de Fuego Violeta; pero te puedo decir ahora y aquí que, a menos que te conserves en paz, sin interrupción, como individuo y como participante de unidades colectivas, importa cuán perfectamente construyas, al final tendrás sino cenizas, si todavía tienes en la conciencia la radiación desintegrante de los 'sentimientos negativos': (lujuria, ira, malicia, odio, temor, gula, codicia, pereza, envidia y orgullo) y sus demás ramificaciones.
+
+La Paz es una cualidad negativa. Es eminentemente positiva y es una concentración de poder. ¿Cuánto control se necesita para mantenerse en paz? ¿Para conservarse absolutamente en calma y dueño de cualquier situación a pesar de toda provocación en el seno de la familia, o de los compañeros de trabajo, o del mundo en general?"`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "LA LLAMA VIVIENTE DE LA LIBERTAD CÓSMICA",
+                        texto: `En el nombre de la Amada Victoriosa Presencia de Dios, YO SOY en mí, mi Amado Ser Crístico, Amado Príncipe Oromasis y Diana, Amado Lanelo El Espíritu de la Gran Hermandad Blanca y la Madre del Mundo, la vida elemental del fuego, aire, agua y tierra, nosotros decretamos:
+
+Yo soy la Llama Inmortal de la Libertad Cósmica.
+Yo demando que todas mis energías, se sometan a la Gran Llama de Dios, dentro de mi corazón.
+Yo demando que todo lo que sea de la Luz, sea transmutado y cambiado, y que yo sea abundancia de todo lo que Yo ya Soy, porque:
+
+Yo Soy la completa expresión de Dios.
+Yo soy la llama viviente de la Libertad Cósmica,
+Yo Soy el júbilo de Dios que pasa a través de mis cuatro cuerpos inferiores, y desciende, desde el Corazón de Mi Presencia, para darme Libertad ahora.
+
+Yo Soy el elevante Poder del Espíritu de la Luz y Fuego, el cual me eleva a la Victoria de mi ascensión y es el completo impulso de victoria reunido de los Santos, de los seres Ascendidos de todas las edades, para ascender otra vez, al mismo Corazón de Dios.
+
+Alabemos al Señor YO SOY EL QUE SOY.`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN AL MAESTRO JESÚS",
+                        texto: `En nombre del amor, de la sabiduría y de la fuerza de mi Presencia YO SOY, apelo a Vos, Bien Amado Maestro Jesús, y a vosotras Grandes Legiones de Luz; inundad (3) mi ser con la Luz, con el Amor y la Fuerza Cósmica; con la Paz, la Libertad y el Poder Cósmico del Silencio, y llenad de Perfección el mundo mental y emocional de toda la humanidad.
+
+Mantened todo esto así hasta que se haga realidad. Os lo agradecemos.`
+                    },
+                    {
+                        titulo: "APELACIÓN A LA MAESTRA NADA",
+                        texto: `En nombre y con la autoridad de la Bien Amada Presencia YO SOY en mí, apelo a Vos, admirable y Ascendida Maestra Nada.
+
+Con todo el amor y la gratitud de mi corazón, bendigo Vuestra misericordia y amable buena voluntad de asistirme en la realización de mi Plano Divino.
+
+Os suplico: Colocad Vuestra maravillosa rosa de tono rosado en mi corazón; aquella rosa que simboliza el reconocimiento de Vuestra Victoria y de la misericordia del Amor Divino, a fin de que a través de mí bendiga toda la vida que entra en contacto conmigo.
+
+Que Vuestra Luz y Vuestro Amor traigan, cada doce horas, un impulso adicional, a fin de que la rosa se expanda y al mismo tiempo exhale el perfume característico de su esencia.
+
+Admirable Nada, deseo ser toda la vida, todo lo que Sois en toda parte y para siempre.
+
+Considero todo esto como ya realizado y agradezco su acogimiento ¡YO SOY!, ¡YO SOY!, ¡YO SOY!`
+                    },
+                    {
+                        titulo: "APELACIÓN AL BIEN AMADO URIEL",
+                        texto: `En nombre y con la autoridad de la presencia Divina YO SOY en mí, apelamos a Vos, Bien Amado Arcángel Uriel y Bien Amada Dama Gracia. Vuestro complemento divino, para auxiliar a nuestro Ángel de la Guarda, que día y noche vela por nosotros, nos vigila y nos mantiene en el camino del servicio dedicado a Dios, bendiciéndonos con paz y amor, gracia y unión, armonía y Luz.
+
+Agradecidos, reverenciamos a la Llama de la Gracia que nos envuelve.`
+                    }
+                ]
+            },
+            6: { // SÁBADO - SÉPTIMO RAYO
+                dia: "SÁBADO",
+                rayo: "SÉPTIMO RAYO",
+                titulo: "LLAMA VIOLETA DE MISERICORDIA, COMPASIÓN, INVOCACIÓN, TRANSMUTACIÓN Y LIBERACIÓN",
+                color: "VIOLETA",
+                actividad: "INVOCACIÓN",
+                clase: "rayo-7",
+                seres: [
+                    { rol: "Director (Chohán)", nombre: "Maestro Saint Germain", codigo: "523", complemento: "Diosa de la Oportunidad" },
+                    { rol: "Arcángel", nombre: "Arcángel Zadquiel", codigo: "389", complemento: "Amatista", codigoComp: "62114" },
+                    { rol: "Elohim", nombre: "Arcturus", codigo: "522", complemento: "Diana", codigoComp: "529" }
+                ],
+                mantram: `AMADÍSIMA PRESENCIA DE DIOS "YO SOY" en mí: ¡Hoy estoy renovado! Hoy estoy vivo con esa vida majestuosa dada a mí por el Padre.
+
+Por la vida que usé mal ayer, invoco la Ley del Perdón y acepto la poderosa actividad de la Llama Violeta transmutadora, ya que Hoy, dentro de mi mágico manto de Luz, mi impasible anillo de Llama, poseo los dones de la vida divina, sin mancilla, puros, limpios.
+
+Hoy puedo convertirme en lo que Dios tiene dispuesto. "Mi Ser Crístico en acción, pues "YO SOY" la conciencia Crística ahora manifestada y eternamente sostenida (3).
+
+Manténme sellado, en un pilar de Fuego Violeta que trascienda toda humana creación en, a través, con contorno mío, o aquello que se me está devolviendo buscando redención, hasta que yo sea enteramente liberado.`,
+                ensenanzas: [
+                    {
+                        autor: "AMADO ASCENDIDO MAESTRO SAINT GERMAIN",
+                        codigo: "523",
+                        subtitulo: "Director del Séptimo Rayo y encargado de la Tierra en los próximos dos mil años",
+                        texto: `"Tomen su tiempo al santificarse. Yo les pido que aprendan a aquietarse, aún cuando haya ninguna emergencia. Practiquen aquietar su pensamiento. Hagan correr a sus memorias etéricas nada discordante. Detengan la inquietud de sus cuerpos físicos y luego, SI PUEDEN, vuélvanse suavemente hacia el Ser Supremo, o a un solo Ser de Luz, hasta que se sientan anclados en la Paz. Con una persona que logre hacer esto se salva una ciudad.
+
+Yo he resuelto que la ciencia y la realización del uso del Fuego Violeta sea radicado en un ser ascendido, como una manifestación científica, absolutamente irrefutable, que se puede negar.
+
+Yo estoy más ansioso que lo que ustedes jamás puedan estarlo, de que aprendan a usar la Llama Violeta, porque ustedes tienen que hacer mis veces en el mundo de las formas, ya que Yo, por Ley Cósmica, tengo que permanecer detrás del velo.
+
+Ustedes, mis amigos, acéptenme. Déjenme caminar por la Tierra a través de ustedes. Dejen que yo les ayude con esta Alquimia Divina. Vengan a los Templos de Fuego Violeta cuando duerman por las noches y yo me sentaré a explicarles y repetirles la Ciencia y alquimia de la Llama Violeta.
+
+Sepan que hay un sitio reservado para ustedes en el corazón y hogar de Saint Germain."`,
+                        oracion: `Amado Saint Germain, Amados Zadquiel, Arcturus y todos los que desempeñan un servicio en el Séptimo Rayo: ¡Los amo, los bendigo y los doy gracias por su gran servicio a mí y a toda la humanidad!`
+                    },
+                    {
+                        autor: "EL AMADO ZADQUIEL",
+                        codigo: "389",
+                        subtitulo: "Arcángel de la Invocación y Transmutación",
+                        texto: `"¿Saben ustedes que la vida contenida en una palabra dura viene hacia ustedes para que la rediman y la liberten? La vida contenida en una mirada dura o un gesto airado, viene a ustedes, sacerdotes de Zadquiel, para que ustedes la liberten con amor.
+
+Personalicemos la energía. Aquello que les viene en sus pensamientos y sus experiencias diarias lo reciban con rebelión o sientan que es injusto. Viene porque hay pocos focos en esta Octava ascendida que sepan redimir, purificar o libertar.
+
+Allí donde haya un foco del Fuego Sagrado; donde quiera que haya una vida que tiene conocimiento de la Llama Violeta, allí tiene esa energía la oportunidad de ser redimida y devuelta a la Primera Causa Universal.
+
+¡Oh, que dicha poder moverse en el Universo libertando energías, amándolas hasta redimirlas y permaneciendo sereno en la Maestría de la propia Divinidad!
+
+Las palabras dichas en juego, refiriéndose a otra vida y que son dichas por bendecir, son una maldición. ¡Yo pido que todas las vidas sean aseguradas contra el recaer en semejantes errores!"`
+                    },
+                    {
+                        autor: "EL AMADO ARCTURUS",
+                        codigo: "522",
+                        subtitulo: "Elohim de Invocación, el Ritmo y la Libertad",
+                        texto: `"YO SOY" el Elohim de la Invocación y el Ritmo que trae a todas las vidas Infinita Libertad, por el uso del Fuego Violeta, cuando lo deseen suficientemente.
+
+"YO SOY" aquél que responde a la llamada del corazón de todo individuo que desee sinceramente ser libre de la enfermedad, la estrechez, el temor y la limitación de toda clase y descripción. ¡Dentro de esa misma vida está la plenitud de Dios!
+
+Hoy os insto con toda la intensidad y presión de mi Ser, a que desarrollen su vida. Desarrollen las cualidades de perfección que hay en ella. Invoquen lo que deseen del corazón de la vida que fluye de lo Universal y llámenme a mí, si desean soltar a la manifestación exterior, desde el centro de su propia vida, todo el poder, cualidades, dones y actividades que sean requeridas para perfeccionar su mundo individual y aquel de sus hermanos humanos.
+
+Dondequiera que haya una vida que sinceramente desee liberación y que la pida y la decrete en ritmo constante, allí estaré Yo para darle mi asistencia, hasta que esa manifestación esté físicamente manifestada."`
+                    }
+                ],
+                decretos: [
+                    {
+                        titulo: "OH SAINT GERMAIN, ENVÍA LLAMA VIOLETA",
+                        texto: `Amada, poderosa y victoriosa Presencia de Dios YO SOY en mí, oh inmortal llama autosustentadora del amor de Cristo de mi corazón, Santo YO Crístico de toda la humanidad, amado Maestro Saint Germain, amada Virgen María y amado Jesús el Cristo, amado Maha Chohán, Arcángel Zadquiel, Príncipe Oromasis, todos los grandes seres, poderes y actividades de la luz al servicio de la llama violeta y transmutadora, amado Lanello, todo el Espíritu de la Gran Hermandad Blanca, Madre del Mundo y vida elemental de fuego, aire, agua y tierra:
+
+1.- Oh Saint Germain, envía llama violeta,
+atraviésala por lo profundo de mi ser;
+bendito Zadquiel, Oromasis
+expandan e intensifiquen más y más.
+
+(Estribillo): Ahora mismo resplandece y satura,
+ahora mismo expande y penetra;
+ahora mismo libera para ser la mente de Dios
+ahora mismo y en la eternidad
+
+2.- Yo estoy en la llama y ahí me quedo,
+yo estoy en el centro de la mano de Dios,
+yo estoy colmado y emocionado por el tono violeta,
+yo estoy saturado en todo mi ser.
+
+3.-YO SOY la llama de Dios en mi alma
+YO SOY el faro de Dios que ostenta la meta,
+YO SOY, YO SOY el fuego sagrado,
+Siento el flujo de júbilo inspirar.
+
+4.- La conciencia de Dios en mí
+me eleva al Cristo que veo;
+descendiendo ahora en llama violeta,
+lo veo venir a reinar por siempre.
+
+¡Amado YO SOY, Amado YO SOY, Amado YO SOY!`
+                    },
+                    {
+                        titulo: "INVOCACIÓN A LOS ÁNGELES DE LA LLAMA VIOLETA",
+                        texto: `En el nombre de la PRESENCIA DE DIOS QUE "YO SOY" y por el poder magnético del Fuego Sagrado investido en mí como Sacerdote de la Orden de Zadquiel, hago esta invocación:
+
+ÁNGELES DE LA LLAMA VIOLETA, VENGAN, MANTENGAN ENCENDIDO EL FUEGO DE LA LIBERACIÓN POR AMOR (3), a través de mi aura y mis sentimientos, mi cerebro y mi mundo mental, mi cuerpo etérico, cada célula de mi cuerpo físico, mi hogar, mis negocios, mis finanzas y asuntos.
+
+Y háganlo por toda vida sobre el planeta hasta que toda creación humana, su causa y su núcleo, sean disueltos y transmutados en Pureza y Perfección, y que nuestra Tierra sea realmente LA SANTA ESTRELLA DE LA LIBERTAD.
+
+Les agradezco la respuesta a esta llamada de mi corazón, pues EL FUEGO VIOLETA DEL AMOR LIBERTADOR FALLA JAMÁS EN PRODUCIR PUREZA Y PERFECCIÓN, Y "YO SOY" ESE ¡FUEGO VIOLETA! (3).`
+                    },
+                    {
+                        titulo: "PERDÓN",
+                        texto: `YO SOY el perdón, aquí actuando,
+toda duda y temor expeliendo,
+los hombres para siempre liberando
+con alas de victoria cósmica.
+
+YO SOY El que invoca con pleno poder
+el perdón a toda hora;
+a toda vida en todo lugar
+yo inundo con la gracia del perdón.`
+                    },
+                    {
+                        titulo: "LUZ LIBÉRAME",
+                        texto: `¡LUZ, libérame! (3).
+LUZ ordena, LUZ ordena, LUZ ordena, ordena, ordena!
+¡LUZ exige, LUZ exige, LUZ exige, exige, exige!
+LUZ aumenta, LUZ aumenta, LUZ aumenta, aumenta, aumenta!
+
+YO SOY UN SER DE FUEGO VIOLETA,
+YO SOY LA PUREZA QUE DIOS DESEA.`
+                    }
+                ],
+                apelaciones: [
+                    {
+                        titulo: "APELACIÓN AL MANTO DE LA LLAMA VIOLETA",
+                        texto: `YO SOY, YO SOY, YO SOY, la victoriosa Presencia del Omnipotente Dios que alimenta el Fuego Violeta de la Libertad (3) a través de cada partícula de mi ser y en mi mundo.
+
+Selladme en una columna de Fuego Sagrado y transformad (3) toda creación humana en mí, en mi torno y en las que son enviadas contra mí, en pureza, libertad y perfección.`
+                    },
+                    {
+                        titulo: "APELACIÓN A LA LLAMA VIOLETA PARA PURIFICAR EL KARMA",
+                        texto: `¡Oh Dios Todo Poderoso, presente en mi corazón! ¡Oh Llama Violeta, precipítate en el aura y purifica el karma!
+
+YO SOY, YO SOY, YO SOY.
+YO SOY la ley de la Llama Violeta que purifica el karma.
+
+Yo pido y ordeno que esta apelación sea atendida con la rapidez del relámpago por la luz del Gran Sol Central.`
+                    },
+                    {
+                        titulo: "APELACIÓN A LA BIEN AMADA AMATISTA",
+                        texto: `En nombre de la infinita Presencia YO SOY y a través de la fuerza magnética del Fuego Sagrado que reside en todos los corazones, suplicamos: flamead (3) la purificadora, misericordiosa y transformadora Llama Violeta.
+
+Envolvednos en un poderoso haz de luz cristalina, liberándonos para siempre de todas las limitaciones, obstáculos y aflicciones. Os lo agradecemos.
+
+¡YO SOY!, ¡YO SOY!, ¡YO SOY!`
+                    },
+                    {
+                        titulo: "APELACIÓN AL ARCÁNGEL ZADQUIEL",
+                        texto: `En nombre de la Divina Presencia ¡YO SOY! Que hay en nosotros, y con la fuerza magnética del Fuego Sagrado que reside en nuestros corazones, apelamos a Vos, poderoso Arcángel Zadquiel.
+
+Encended cada célula de nuestro cerebro, de nuestros cuatro cuerpos inferiores, de nuestras auras, chacras y conciencias con la llama púrpura-rey, traspasándonos con sus flameantes y purificadores rayos, liberándonos de todas las limitaciones y dificultades que están ocultas y constituyen obstáculos en nuestro camino hacia la luz.
+
+Transformad todo en pureza, libertad y perfección. Os lo agradecemos.`
+                    }
+                ]
+            }
+        };
+        
+        // Variables del contador
+        let contadorActual = 0;
+        
+        // Función para mostrar sección
+        function mostrarSeccion(seccion) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            
+            if (seccion === 'hoy') {
+                document.getElementById('hoy').classList.add('active');
+                const hoy = new Date().getDay();
+                mostrarDiaCompleto(hoy, 'contenido-hoy');
+            } else if (seccion === 'rayos') {
+                document.getElementById('rayos').classList.add('active');
+            } else {
+                document.getElementById(seccion).classList.add('active');
+            }
+        }
+        
+        // Función para ir a un día específico
+        function irAlDia(diaNum) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+            document.getElementById('rayos').classList.add('active');
+            
+            let html = '';
+            for (let i = 0; i < 7; i++) {
+                html += generarCardDia(i, i === diaNum);
+            }
+            document.getElementById('contenido-rayos').innerHTML = html;
+            
+            setTimeout(() => {
+                const elemento = document.getElementById('dia-' + diaNum);
+                if (elemento) {
+                    elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+        
+        // Función para mostrar un día completo
+        function mostrarDiaCompleto(diaNum, contenedorId) {
+            const contenedor = document.getElementById(contenedorId);
+            contenedor.innerHTML = generarCardDia(diaNum, true);
+        }
+        
+        // Función para generar la tarjeta de un día
+        function generarCardDia(diaNum, expandido) {
+            const rayo = rayos[diaNum];
+            const hoy = new Date().getDay();
+            const esHoy = diaNum === hoy;
+            
+            let html = `
+                <div class="dia-card" id="dia-${diaNum}">
+                    <div class="dia-header ${rayo.clase}" onclick="toggleDia(${diaNum})">
+                        <h3>${rayo.dia} - ${rayo.rayo} ${esHoy ? '<span class="hoy-badge">HOY</span>' : ''}</h3>
+                        <div class="rayo-info">
+                            <div>Color: ${rayo.color}</div>
+                            <div>Actividad: ${rayo.actividad}</div>
+                        </div>
+                    </div>
+                    <div class="dia-content ${expandido ? 'expanded' : ''}" id="contenido-${diaNum}">
+                        <h4 style="color: var(--dorado); text-align: center; margin-bottom: 20px;">${rayo.titulo}</h4>
+                        
+                        <div class="seres-luz">
+                            ${rayo.seres.map(ser => `
+                                <div class="ser-card">
+                                    <h4>
+                                        ${ser.nombre}
+                                        ${ser.codigo ? `<span class="codigo-agesta">${ser.codigo}</span>` : ''}
+                                    </h4>
+                                    <div class="rol">${ser.rol}</div>
+                                    ${ser.complemento ? `
+                                        <div style="margin-top: 8px; font-size: 0.9em; color: #aaa;">
+                                            Complemento: ${ser.complemento}
+                                            ${ser.codigoComp ? `<span class="codigo-agesta" style="font-size: 0.8em;">${ser.codigoComp}</span>` : ''}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="meditacion">
+                            <h4>🙏 MANTRAM INICIAL</h4>
+                            ${rayo.mantram.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                        </div>
+                        
+                        ${rayo.ensenanzas.map(e => `
+                            <div class="meditacion">
+                                <div class="autor">
+                                    ${e.autor}
+                                    ${e.codigo ? `<span class="codigo-agesta">${e.codigo}</span>` : ''}
+                                </div>
+                                ${e.subtitulo ? `<div style="font-size: 0.9em; color: #aaa; margin-bottom: 15px; font-style: italic;">${e.subtitulo}</div>` : ''}
+                                ${e.texto.split('\n\n').map(p => `<p class="cita">${p}</p>`).join('')}
+                                ${e.oracion ? `
+                                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <h5 style="color: #ddd; margin-bottom: 10px;">✨ Oración:</h5>
+                                        ${e.oracion.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                        
+                        <div class="decreto-section">
+                            <h4>📜 DECRETOS</h4>
+                            ${rayo.decretos.map(d => `
+                                <div class="decreto">
+                                    <h5>${d.titulo}</h5>
+                                    <p style="white-space: pre-line;">${d.texto}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="apelacion-section">
+                            <h4>🙏 APELACIONES</h4>
+                            ${rayo.apelaciones.map(a => `
+                                <div class="apelacion">
+                                    <h5>${a.titulo}</h5>
+                                    ${a.texto.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(75, 0, 130, 0.2); border-radius: 10px;">
+                            <p style="font-size: 1.2em; color: var(--dorado);">Gracias, Gracias, Gracias 🙏</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            return html;
+        }
+        
+        // Función para expandir/colapsar día
+        function toggleDia(diaNum) {
+            const contenido = document.getElementById('contenido-' + diaNum);
+            contenido.classList.toggle('expanded');
+        }
+        
+        // Funciones del contador
+        function contar() {
+            if (contadorActual < 45) {
+                contadorActual++;
+                actualizarContador();
+            }
+        }
+        
+        function resetContador() {
+            contadorActual = 0;
+            actualizarContador();
+        }
+        
+        function actualizarContador() {
+            document.getElementById('contador-numero').textContent = contadorActual;
+            const porcentaje = (contadorActual / 45) * 100;
+            document.getElementById('progreso').style.width = porcentaje + '%';
+            
+            const mensaje = document.getElementById('contador-mensaje');
+            if (contadorActual === 0) {
+                mensaje.textContent = 'Toca el botón para empezar';
+                mensaje.className = '';
+            } else if (contadorActual < 45) {
+                mensaje.textContent = `Faltan ${45 - contadorActual} repeticiones`;
+                mensaje.className = '';
+            } else {
+                mensaje.textContent = '✨ ¡COMPLETADO! Gracias, Gracias, Gracias ✨';
+                mensaje.className = 'completado';
+            }
+        }
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            actualizarContador();
+        });
+    </script>
+</body>
+</html>
