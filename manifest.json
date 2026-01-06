@@ -1,0 +1,21 @@
+{
+    "name": "Meditaciones Diarias de las 7 Llamas",
+    "short_name": "7 Llamas",
+    "description": "Meditaciones Diarias de los 7 Rayos con Mantrams, Enseñanzas e Invocaciones Sagradas",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0a0a1a",
+    "theme_color": "#4B0082",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["spirituality", "lifestyle", "education"],
+    "lang": "es",
+    "dir": "ltr"
+}
