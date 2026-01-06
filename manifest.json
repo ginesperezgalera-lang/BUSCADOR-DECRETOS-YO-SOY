@@ -1,0 +1,20 @@
+{
+    "name": "90 Decretos YO SOY - El Libro de Oro",
+    "short_name": "Decretos YO SOY",
+    "description": "90 Decretos YO SOY del Maestro Saint Germain con buscador y protocolo de activación",
+    "start_url": "/BUSCADOR-DECRETOS-YO-SOY/",
+    "display": "standalone",
+    "background_color": "#0a0a1a",
+    "theme_color": "#4B0082",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["lifestyle", "education"],
+    "lang": "es"
+}

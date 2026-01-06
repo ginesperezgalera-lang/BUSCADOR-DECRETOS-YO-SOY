@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 90 Decretos YO SOY - El Libro de Oro de Saint Germain</title>
+    <meta name="description" content="90 Decretos YO SOY del Maestro Saint Germain con buscador, protocolo de activación y Llama Violeta">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4B0082">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+        :root {
+            --primary: #4B0082;
+            --secondary: #8B5CF6;
+            --gold: #FFD700;
+            --bg-dark: #0a0a1a;
+            --bg-card: rgba(75, 0, 130, 0.2);
+            --text: #E8E8FF;
+            --text-muted: #9999BB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Partículas de fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: float 15s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.4) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Portal de Herramientas */
+        .portal-herramientas {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .portal-titulo {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .portal-titulo h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #e8d5ff;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .portal-enlace {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(138, 43, 226, 0.1) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s ease;
+        }
+
+        .portal-enlace:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.4);
+            border-color: rgba(138, 43, 226, 0.6);
+            background: linear-gradient(145deg, rgba(138, 43, 226, 0.2) 0%, rgba(138, 43, 226, 0.3) 100%);
+        }
+
+        .portal-icono {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .portal-nombre {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .portal-descripcion {
+            font-size: 0.8rem;
+            color: #b8a0d4;
+            text-align: center;
+        }
+
+        /* Navegación */
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: var(--bg-card);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: var(--text);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Secciones */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Buscador */
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Decretos */
+        .decreto-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .decreto-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .decreto-numero {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--gold);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .decreto-texto {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .decreto-texto strong {
+            color: var(--gold);
+        }
+
+        .decreto-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-small:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-small.favorito.active {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        /* Gran Decreto */
+        .gran-decreto {
+            background: linear-gradient(135deg, rgba(148, 0, 211, 0.3) 0%, rgba(75, 0, 130, 0.4) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .gran-decreto h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .gran-decreto-texto {
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .gran-decreto-texto p {
+            margin-bottom: 15px;
+        }
+
+        .cierre-decreto {
+            text-align: center;
+            font-weight: bold;
+            color: var(--gold);
+            margin-top: 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Protocolo */
+        .protocolo-step {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bg-dark);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .step-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contador */
+        .contador-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .contador-numero {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .contador-meta {
+            color: var(--text-muted);
+            margin: 10px 0 20px;
+        }
+
+        .contador-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-contador {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+
+        .btn-contador:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-contador.reset {
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        .contador-completado {
+            display: none;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Favoritos */
+        .favoritos-list {
+            min-height: 100px;
+        }
+
+        .favoritos-empty {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 30px;
+        }
+
+        /* Estadísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-numero {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        footer .project-name {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6rem; }
+            .container { padding: 10px; }
+            .portal-grid { grid-template-columns: 1fr; }
+            .decreto-actions { justify-content: center; }
+            .contador-numero { font-size: 3rem; }
+        }
+
+        /* Ocultar texto largo en móvil */
+        .hide-mobile {
+            display: inline;
+        }
+
+        @media (max-width: 500px) {
+            .hide-mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <h1>✨ Decretos YO SOY ✨</h1>
+            <p>El Libro de Oro de Saint Germain</p>
+            <div class="project-badge">Proyecto: Enseñanzas Espirituales Accesibles</div>
+        </header>
+
+        <!-- PORTAL DE HERRAMIENTAS -->
+        <section class="portal-herramientas">
+            <div class="portal-titulo">
+                <h3>🔮 MÁS HERRAMIENTAS ESPIRITUALES</h3>
+            </div>
+            <div class="portal-grid">
+                <a href="https://ginesperezgalera-lang.github.io/CODIGOS-AGESTA-BUSCADOR/" class="portal-enlace" target="_blank">
+                    <span class="portal-icono">🔢</span>
+                    <span class="portal-nombre">Códigos Sagrados de Agesta</span>
+                    <span class="portal-descripcion">+1,100 códigos con contador de 45</span>
+                </a>
+                <a href="meditaciones.html" class="portal-enlace">
+                    <span class="portal-icono">🔥</span>
+                    <span class="portal-nombre">Meditaciones Diarias</span>
+                    <span class="portal-descripcion">7 Rayos • Mantrams • Invocaciones</span>
+                </a>
+                <a href="https://illustrious-horse-025b40.netlify.app/index.html.html" class="portal-enlace" target="_blank">
+                    <span class="portal-icono">🌙</span>
+                    <span class="portal-nombre">Portal Lunar de Anillos</span>
+                    <span class="portal-descripcion">Fases lunares • Anillos sagrados</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <nav>
+            <button class="nav-btn active" data-section="decretos">📜 90 Decretos</button>
+            <button class="nav-btn" data-section="gran-decreto">🔥 Llama Violeta</button>
+            <button class="nav-btn" data-section="protocolo">📋 Protocolo</button>
+            <button class="nav-btn" data-section="contador">🔢 Contador</button>
+            <button class="nav-btn" data-section="favoritos">⭐ Favoritos</button>
+        </nav>
+
+        <!-- SECCIÓN: 90 DECRETOS -->
+        <section id="decretos" class="section active">
+            <div class="card">
+                <div class="section-title">📜 Los 90 Decretos YO SOY</div>
+                
+                <div class="search-box">
+                    <input type="text" id="searchDecretos" placeholder="🔍 Buscar en los decretos...">
+                </div>
+
+                <div id="decretos-list"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: GRAN DECRETO LLAMA VIOLETA -->
+        <section id="gran-decreto" class="section">
+            <div class="gran-decreto">
+                <h3>🔥 Gran Decreto de la Llama Violeta</h3>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">
+                    <em>⚠️ Saint Germain recomienda: Hacer este decreto mínimo 2 veces al día</em>
+                </p>
+                
+                <div class="gran-decreto-texto">
+                    <p><strong>"YO SOY"</strong> LA LEY DEL PERDÓN para mí mismo y toda la humanidad por toda la energía mal calificada.</p>
+                    
+                    <p><strong>"YO SOY"</strong> siempre un gigantesco pilar de Fuego Violeta consumidora, hecho de Puro Amor Divino, que trasciende todos los conceptos humanos y derrama constantemente sobre mí y sobre toda la humanidad todo el triunfo y toda la perfección del Padre.</p>
+                    
+                    <p>Poderosa Presencia <strong>"YO SOY"</strong> asume el mando absoluto de mi mente, de mi cuerpo y mi mundo: aplica tu cristalina Llama Violeta consumidora en mí y consume todos mis errores y defectos pasados y presentes. Su causa y efecto, núcleo, raíz y disuelve todos mis problemas para siempre.</p>
+                    
+                    <p>Poderosa Presencia <strong>"YO SOY"</strong> aplica en mí tu cristalina Llama Violeta consumidora y consume toda influencia contraria a la paz y al bienestar mío y de todos los que me rodean, envuélveme en tu canal de luz y energía como en una poderosa muralla contra la cual choquen todas las fuerzas negativas, destructivas y para nada benéficas que vengan contra mí y que regresen a su punto de partida transformadas en buena voluntad, en amor y en bienestar hacia todos los que alcance en su acción.</p>
+                </div>
+                
+                <div class="cierre-decreto">
+                    Lo decreto de acuerdo con la voluntad de Dios, en nombre de Jesucristo, en armonía con el mundo entero, bajo la gracia y de la manera perfecta.<br>
+                    Hecho está. Gracias Padre porque me has oído. Que así sea.
+                </div>
+
+                <div class="decreto-actions" style="justify-content: center; margin-top: 25px;">
+                    <button class="btn-small" onclick="escucharTexto(document.querySelector('.gran-decreto-texto').innerText)">🔊 Escuchar</button>
+                    <button class="btn-small" onclick="copiarTexto(document.querySelector('.gran-decreto').innerText)">📋 Copiar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">⚠️ Cierre Obligatorio</div>
+                <p style="text-align: center; font-size: 1.1rem;">
+                    <strong style="color: var(--gold);">"YO SOY"</strong> la Ley del Perdón y la Llama Violeta Transmutadora de toda acción errónea mía y de toda la humanidad.
+                </p>
+                <p style="text-align: center; margin-top: 15px; color: var(--text-muted);">
+                    <em>Sin el cierre, el decreto queda incompleto</em>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PROTOCOLO -->
+        <section id="protocolo" class="section">
+            <div class="card">
+                <div class="section-title">📋 Protocolo de Activación</div>
+                
+                <div class="protocolo-step">
+                    <div class="step-title"><span class="step-number">1</span> Conexión Divina</div>
+                    <p>Código Sagrado <strong style="color: var(--gold);">522</strong> - Repetir 45 veces</p>
+                    <p style="margin-top: 10px;"><em>"Amada Presencia de Dios YO SOY en mí, te invoco..."</em></p>
+                </div>
+
+                <div class="protocolo-step">
+                    <div class="step-title"><span class="step-number">2</span> Ley del Perdón</div>
+                    <p><em>"Invoco la Ley del Perdón. Perdono y pido perdón. Gracias, Padre, que ya me oíste."</em></p>
+                </div>
+
+                <div class="protocolo-step">
+                    <div class="step-title"><span class="step-number">3</span> Tu Decreto</div>
+                    <p>Elige tu decreto y repítelo <strong style="color: var(--gold);">mínimo 3 veces</strong> con fe y sentimiento.</p>
+                </div>
+
+                <div class="protocolo-step">
+                    <div class="step-title"><span class="step-number">4</span> Cierre Obligatorio</div>
+                    <p><em>"Gracias, Padre, que ya me oíste"</em> (repetir 3 veces)</p>
+                    <p style="margin-top: 10px; color: var(--gold);"><strong>⚠️ Sin el cierre, el decreto queda incompleto</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTADOR -->
+        <section id="contador" class="section">
+            <div class="card">
+                <div class="section-title">🔢 Contador de Repeticiones</div>
+                
+                <div class="contador-box">
+                    <div class="contador-numero" id="contadorNumero">0</div>
+                    <div class="contador-meta">Meta: <span id="metaRepeticiones">45</span> repeticiones</div>
+                    
+                    <div class="contador-btns">
+                        <button class="btn-contador" onclick="incrementarContador()">+1 Repetición</button>
+                        <button class="btn-contador reset" onclick="resetContador()">↺ Reiniciar</button>
+                    </div>
+                    
+                    <div class="contador-completado" id="contadorCompletado">
+                        ✨ ¡Completado! Di: "Gracias, Gracias, Gracias" 🙏
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px;">
+                    <h4 style="color: var(--gold); margin-bottom: 15px;">📿 Método de las Falanges</h4>
+                    <p>5 dedos × 3 falanges = 15 por ronda</p>
+                    <p style="color: var(--gold); margin-top: 10px;"><strong>3 rondas = 45 repeticiones ✓</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: FAVORITOS -->
+        <section id="favoritos" class="section">
+            <div class="card">
+                <div class="section-title">⭐ Mis Favoritos</div>
+                <div id="favoritos-list" class="favoritos-list">
+                    <div class="favoritos-empty">
+                        <p>Todavía tienes favoritos guardados</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Pulsa ⭐ en cualquier decreto para añadirlo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">📊 Mi Práctica</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-numero" id="statDecretos">0</div>
+                        <div class="stat-label">Decretos leídos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-numero" id="statRepeticiones">0</div>
+                        <div class="stat-label">Repeticiones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-numero" id="statFavoritos">0</div>
+                        <div class="stat-label">Favoritos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="project-name">💜 Proyecto: Enseñanzas Espirituales Accesibles</div>
+            <p>6 de enero de 2026</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">Gracias, Gracias, Gracias 🙏</p>
+        </footer>
+    </div>
+
+    <script>
+        // Los 90 Decretos YO SOY
+        const decretos = [
+            { numero: 1, texto: `"YO SOY" la Presencia que gobierna y controla perfectamente todas las actividades de mi mente, mi cuerpo y mis asuntos.` },
+            { numero: 2, texto: `"YO SOY" la Presencia que comanda y controla todo elemento de la vida para que cese su apariencia imperfecta.` },
+            { numero: 3, texto: `"YO SOY" la Presencia que produce Perfección en todo lo que Yo hago, porque mi Padre me guía y dirige.` },
+            { numero: 4, texto: `"YO SOY" el Poder y la Sabiduría en todo lo que Yo hago.` },
+            { numero: 5, texto: `"YO SOY" la Ley del Perdón y la Llama Transmutadora de todo error que haya cometido.` },
+            { numero: 6, texto: `"YO SOY" la Presencia de la Opulencia ilimitada de Dios.` },
+            { numero: 7, texto: `"YO SOY" la Presencia que disuelve y consume toda cosa indeseada de mi mundo.` },
+            { numero: 8, texto: `"YO SOY" la Llama Violeta que consume toda creación humana imperfecta en mi mundo.` },
+            { numero: 9, texto: `"YO SOY" la Presencia que suministra todo lo que necesito o deseo.` },
+            { numero: 10, texto: `"YO SOY" la Presencia de la Perfecta Salud en todo mi cuerpo.` },
+            { numero: 11, texto: `"YO SOY" la Presencia de la Armonía, la Paz y el Amor en todo mi ser.` },
+            { numero: 12, texto: `"YO SOY" la Protección Invencible de Dios en Acción.` },
+            { numero: 13, texto: `"YO SOY" la Presencia de la Verdad Divina manifestándose en mí.` },
+            { numero: 14, texto: `"YO SOY" la Presencia de la Alegría y la Felicidad en todo mi mundo.` },
+            { numero: 15, texto: `"YO SOY" la Puerta Abierta que ningún hombre puede cerrar.` },
+            { numero: 16, texto: `"YO SOY" la Presencia de la Victoria en todo lo que emprendo.` },
+            { numero: 17, texto: `"YO SOY" la Presencia de la Sabiduría iluminando mi mente.` },
+            { numero: 18, texto: `"YO SOY" el Poder de la Voluntad Divina actuando en mí.` },
+            { numero: 19, texto: `"YO SOY" la Presencia del Amor Divino fluyendo a través de mí hacia todo el mundo.` },
+            { numero: 20, texto: `"YO SOY" la Presencia de la Provisión ilimitada para toda necesidad.` },
+            { numero: 21, texto: `"YO SOY" la Presencia que transmuta todo error en Perfección.` },
+            { numero: 22, texto: `"YO SOY" el Poder de la Concentración que me mantiene enfocado en mi propósito divino.` },
+            { numero: 23, texto: `"YO SOY" la Presencia de la Gratitud que multiplica mis bendiciones.` },
+            { numero: 24, texto: `"YO SOY" la Llama de la Iluminación que disipa toda oscuridad.` },
+            { numero: 25, texto: `"YO SOY" la Presencia que atrae todo lo bueno a mi vida.` },
+            { numero: 26, texto: `"YO SOY" el Canal perfecto de la Luz Divina.` },
+            { numero: 27, texto: `"YO SOY" la Presencia de la Paciencia Divina en toda situación.` },
+            { numero: 28, texto: `"YO SOY" la Presencia del Equilibrio perfecto en mi vida.` },
+            { numero: 29, texto: `"YO SOY" la Presencia de la Fortaleza Divina ante todo desafío.` },
+            { numero: 30, texto: `"YO SOY" el Templo viviente de Dios en la Tierra.` },
+            { numero: 31, texto: `"YO SOY" la Presencia de la Curación Divina en mi cuerpo.` },
+            { numero: 32, texto: `"YO SOY" la Mente de Cristo manifestándose en mí.` },
+            { numero: 33, texto: `"YO SOY" la Presencia de la Compasión Divina hacia todos los seres.` },
+            { numero: 34, texto: `"YO SOY" la Llama de la Purificación que limpia todo mi ser.` },
+            { numero: 35, texto: `"YO SOY" la Presencia del Servicio Amoroso hacia la humanidad.` },
+            { numero: 36, texto: `"YO SOY" el Poder que disuelve toda limitación.` },
+            { numero: 37, texto: `"YO SOY" la Presencia de la Creatividad Divina expresándose a través de mí.` },
+            { numero: 38, texto: `"YO SOY" la Armonía perfecta en todas mis relaciones.` },
+            { numero: 39, texto: `"YO SOY" la Presencia de la Abundancia manifestándose en mi vida.` },
+            { numero: 40, texto: `"YO SOY" el Guardián de la Llama Sagrada en mi corazón.` },
+            { numero: 41, texto: `"YO SOY" la Presencia de la Fe inquebrantable en Dios.` },
+            { numero: 42, texto: `"YO SOY" la Llama de la Resurrección que renueva todo mi ser.` },
+            { numero: 43, texto: `"YO SOY" la Presencia del Discernimiento Divino en todas mis decisiones.` },
+            { numero: 44, texto: `"YO SOY" el Flujo constante de la Energía Divina.` },
+            { numero: 45, texto: `"YO SOY" la Presencia de la Serenidad Divina en todo momento.` },
+            { numero: 46, texto: `"YO SOY" la Llama del Entusiasmo Divino en todo lo que hago.` },
+            { numero: 47, texto: `"YO SOY" la Presencia de la Justicia Divina en acción.` },
+            { numero: 48, texto: `"YO SOY" el Instrumento perfecto de la Voluntad de Dios.` },
+            { numero: 49, texto: `"YO SOY" la Presencia de la Libertad Divina liberándome de toda atadura.` },
+            { numero: 50, texto: `"YO SOY" la Llama de la Ascensión elevando mi consciencia.` },
+            { numero: 51, texto: `"YO SOY" la Presencia de la Maestría Divina en mi vida.` },
+            { numero: 52, texto: `"YO SOY" el Poder del Silencio que conecta con la Fuente.` },
+            { numero: 53, texto: `"YO SOY" la Presencia de la Integridad Divina en todo mi ser.` },
+            { numero: 54, texto: `"YO SOY" la Llama del Coraje Divino ante toda adversidad.` },
+            { numero: 55, texto: `"YO SOY" la Presencia de la Belleza Divina manifestándose en mi vida.` },
+            { numero: 56, texto: `"YO SOY" el Canal de las Bendiciones Divinas para otros.` },
+            { numero: 57, texto: `"YO SOY" la Presencia de la Orden Divina en todos mis asuntos.` },
+            { numero: 58, texto: `"YO SOY" la Llama de la Determinación Divina en mis propósitos.` },
+            { numero: 59, texto: `"YO SOY" la Presencia de la Humildad Divina ante la grandeza de Dios.` },
+            { numero: 60, texto: `"YO SOY" el Poder del Perdón que libera y sana.` },
+            { numero: 61, texto: `"YO SOY" la Presencia de la Constancia Divina en mi camino espiritual.` },
+            { numero: 62, texto: `"YO SOY" la Llama de la Transformación que me eleva cada día.` },
+            { numero: 63, texto: `"YO SOY" la Presencia de la Unidad con toda la Creación.` },
+            { numero: 64, texto: `"YO SOY" el Guardián de mis pensamientos y emociones.` },
+            { numero: 65, texto: `"YO SOY" la Presencia de la Esperanza Divina iluminando mi futuro.` },
+            { numero: 66, texto: `"YO SOY" la Llama del Propósito Divino guiando mis pasos.` },
+            { numero: 67, texto: `"YO SOY" la Presencia de la Dignidad Divina en todo momento.` },
+            { numero: 68, texto: `"YO SOY" el Templo de la Sabiduría Eterna.` },
+            { numero: 69, texto: `"YO SOY" la Presencia de la Generosidad Divina compartiendo mis dones.` },
+            { numero: 70, texto: `"YO SOY" la Llama de la Inspiración Divina en mi creatividad.` },
+            { numero: 71, texto: `"YO SOY" la Presencia de la Responsabilidad Divina en mis acciones.` },
+            { numero: 72, texto: `"YO SOY" el Canal del Amor Incondicional de Dios.` },
+            { numero: 73, texto: `"YO SOY" la Presencia de la Claridad Mental Divina.` },
+            { numero: 74, texto: `"YO SOY" la Llama de la Devoción a mi camino espiritual.` },
+            { numero: 75, texto: `"YO SOY" la Presencia de la Eficiencia Divina en todo lo que hago.` },
+            { numero: 76, texto: `"YO SOY" el Poder que manifiesta los milagros en mi vida.` },
+            { numero: 77, texto: `"YO SOY" la Presencia de la Nobleza Divina en mi carácter.` },
+            { numero: 78, texto: `"YO SOY" la Llama de la Renovación constante de mi ser.` },
+            { numero: 79, texto: `"YO SOY" la Presencia de la Comunicación Divina con los planos superiores.` },
+            { numero: 80, texto: `"YO SOY" el Instrumento de la Paz Divina en el mundo.` },
+            { numero: 81, texto: `"YO SOY" la Presencia de la Estabilidad Divina en tiempos de cambio.` },
+            { numero: 82, texto: `"YO SOY" la Llama del Entendimiento que disuelve toda confusión.` },
+            { numero: 83, texto: `"YO SOY" la Presencia de la Sinceridad Divina en mis palabras.` },
+            { numero: 84, texto: `"YO SOY" el Guardian de la Luz en mi hogar y familia.` },
+            { numero: 85, texto: `"YO SOY" la Presencia de la Adaptabilidad Divina ante los cambios.` },
+            { numero: 86, texto: `"YO SOY" la Llama de la Consagración de mi vida a Dios.` },
+            { numero: 87, texto: `"YO SOY" la Presencia de la Receptividad a las Bendiciones Divinas.` },
+            { numero: 88, texto: `"YO SOY" el Poder de la Palabra hablada manifestando mi bien.` },
+            { numero: 89, texto: `"YO SOY" la Presencia de la Plenitud Divina llenando todo vacío.` },
+            { numero: 90, texto: `"YO SOY" la Llama Victoriosa de la Ascensión cumpliendo mi destino divino.` }
+        ];
+
+        // Estado de la aplicación
+        let favoritos = JSON.parse(localStorage.getItem('decretos_favoritos') || '[]');
+        let stats = JSON.parse(localStorage.getItem('decretos_stats') || '{"decretos": 0, "repeticiones": 0}');
+        let contadorActual = 0;
+
+        // Crear partículas
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Renderizar decretos
+        function renderDecretos(filtro = '') {
+            const container = document.getElementById('decretos-list');
+            const decretosFiltrados = decretos.filter(d => 
+                d.texto.toLowerCase().includes(filtro.toLowerCase()) ||
+                d.numero.toString().includes(filtro)
+            );
+
+            container.innerHTML = decretosFiltrados.map(d => `
+                <div class="decreto-card">
+                    <span class="decreto-numero">${d.numero}</span>
+                    <span class="decreto-texto">${d.texto.replace(/"YO SOY"/g, '<strong>"YO SOY"</strong>')}</span>
+                    <div class="decreto-actions">
+                        <button class="btn-small" onclick="escucharTexto('${d.texto.replace(/'/g, "\\'")}')">🔊 <span class="hide-mobile">Escuchar</span></button>
+                        <button class="btn-small" onclick="copiarTexto('${d.texto.replace(/'/g, "\\'")}')">📋 <span class="hide-mobile">Copiar</span></button>
+                        <button class="btn-small favorito ${favoritos.includes(d.numero) ? 'active' : ''}" onclick="toggleFavorito(${d.numero})">⭐ <span class="hide-mobile">Favorito</span></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Renderizar favoritos
+        function renderFavoritos() {
+            const container = document.getElementById('favoritos-list');
+            const decretosFavoritos = decretos.filter(d => favoritos.includes(d.numero));
+
+            if (decretosFavoritos.length === 0) {
+                container.innerHTML = `
+                    <div class="favoritos-empty">
+                        <p>Todavía tienes favoritos guardados</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Pulsa ⭐ en cualquier decreto para añadirlo</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = decretosFavoritos.map(d => `
+                    <div class="decreto-card">
+                        <span class="decreto-numero">${d.numero}</span>
+                        <span class="decreto-texto">${d.texto.replace(/"YO SOY"/g, '<strong>"YO SOY"</strong>')}</span>
+                        <div class="decreto-actions">
+                            <button class="btn-small" onclick="escucharTexto('${d.texto.replace(/'/g, "\\'")}')">🔊 Escuchar</button>
+                            <button class="btn-small" onclick="copiarTexto('${d.texto.replace(/'/g, "\\'")}')">📋 Copiar</button>
+                            <button class="btn-small favorito active" onclick="toggleFavorito(${d.numero})">⭐ Quitar</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Actualizar estadísticas
+            document.getElementById('statFavoritos').textContent = favoritos.length;
+            document.getElementById('statDecretos').textContent = stats.decretos;
+            document.getElementById('statRepeticiones').textContent = stats.repeticiones;
+        }
+
+        // Toggle favorito
+        function toggleFavorito(numero) {
+            if (favoritos.includes(numero)) {
+                favoritos = favoritos.filter(n => n !== numero);
+            } else {
+                favoritos.push(numero);
+            }
+            localStorage.setItem('decretos_favoritos', JSON.stringify(favoritos));
+            renderDecretos(document.getElementById('searchDecretos').value);
+            renderFavoritos();
+        }
+
+        // Escuchar texto
+        function escucharTexto(texto) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(texto);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+                
+                // Actualizar stats
+                stats.decretos++;
+                localStorage.setItem('decretos_stats', JSON.stringify(stats));
+                renderFavoritos();
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz');
+            }
+        }
+
+        // Copiar texto
+        function copiarTexto(texto) {
+            navigator.clipboard.writeText(texto).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ Copiado';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            });
+        }
+
+        // Contador
+        function incrementarContador() {
+            contadorActual++;
+            document.getElementById('contadorNumero').textContent = contadorActual;
+            
+            // Actualizar stats
+            stats.repeticiones++;
+            localStorage.setItem('decretos_stats', JSON.stringify(stats));
+            
+            if (contadorActual >= 45) {
+                document.getElementById('contadorCompletado').style.display = 'block';
+            }
+            
+            renderFavoritos();
+        }
+
+        function resetContador() {
+            contadorActual = 0;
+            document.getElementById('contadorNumero').textContent = '0';
+            document.getElementById('contadorCompletado').style.display = 'none';
+        }
+
+        // Navegación
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.section).classList.add('active');
+            });
+        });
+
+        // Buscador
+        document.getElementById('searchDecretos').addEventListener('input', (e) => {
+            renderDecretos(e.target.value);
+        });
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            renderDecretos();
+            renderFavoritos();
+        });
+
+        // Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.log('SW error:', err));
+        }
+    </script>
+</body>
+</html>
